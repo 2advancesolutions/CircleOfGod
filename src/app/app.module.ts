@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { UserProfileComponent } from './componets/user-profile/user-profile.component';
 import { TabsComponent } from './componets/tabs/tabs.component';
 import { EventCardComponent } from './componets/event-card/event-card.component';
+import { PostCommentsComponent } from './componets/post-comments/post-comments.component';
+import { VideoListComponent } from './componets/video-list/video-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
     TabsComponent,
-    EventCardComponent
+    EventCardComponent,
+    PostCommentsComponent,
+    VideoListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+
+.mt-50 {
+    margin-top: 50px
+}
+
+.mb-50 {
+    margin-bottom: 50px
+}
+
+.card-header:not([class*=bg-]):not([class*=alpha-]) {
+    background-color: transparent;
+    padding-top: 1.25rem
+}
+
+.header-elements-inline {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap
+}
+
+a {
+    text-decoration: none !important;
+    color: red
+}
+
+.img-preview {
+    max-height: 5rem
+}
