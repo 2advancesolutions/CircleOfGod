@@ -1,54 +1,285 @@
 
-
-//header 
-.header {
-    min-height: 40vh;
-    background: #009FFF;
-  background: linear-gradient(to right, #231d1e, #005eff);
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  
+    background-color: #ffffff;
+  }
+  
+  /* HEADER */
+  
+  header {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
+  .userBgImage {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    transform: skewY(-3.5deg);
+    overflow: hidden;
+    background: url(https://dl.dropbox.com/s/f2a57qfox7r0jaj/bg.jpg) 0 0 / cover no-repeat;
+  }
+  
+  /* MAIN */
+  
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 1.777em;
+  }
+  @media only screen and (max-width: 540px) {
+    main {
+      padding: 0 1em;
+    }
+  }
+  
+  /* Block one*/
+  
+  .block-one {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  @media only screen and (max-width: 540px) {
+    .block-one {
+      justify-content: center;
+    }
+  }
+  .avatar {
+    margin-top: -7.478em;
+  }
+  .icon.icon-follow-button {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: -1.8rem;
+    right: -1.8rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: #92CDCF;
     color: white;
-    clip-path: ellipse(100vw 60vh at 50% 50%);
+  }
+  .icon.icon-follow-button:hover {
+    fill: #445878;
+  }
+  @media only screen and (max-width: 540px) {
+    .avatar {
+      transform-origin: left;
+      transform: scale(0.61);
+    }
+  }
+  
+  .profile-stats {
+    margin-top: -.563em;
     display: flex;
+    align-items: flex-start;
+  }
+  .profile-stats__block {
+    margin-left: 1.777em;
+    font-weight: 500;
+  }
+  .profile-stats__block h2 {
+    margin: 0;
+  
+    text-transform: uppercase;
+    font-size: 1em;
+    opacity: .54;
+  }
+  .profile-stats__block p {
+    margin: .317em 0;
+  
+    font-size: 1.333em;
+    text-align: center;
+    opacity: .87;
+  }
+  @media only screen and (max-width: 540px) {
+    .profile-stats {
+      transform-origin: left;
+      transform: scale(0.8);
+    }
+  }
+  
+  /* Block two */
+  
+  .block-two {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  
+  /* info block one */
+  
+  .info-block-one {
+    flex: 0 1 200px;
+    margin-top: 1em;
+  
+    font-size: 1em;
+    font-weight: 100;
+    color: #31353D;
+  }
+  .info-block-one h1 {
+    flex: 2;
+    margin: 0;
+  
+    font-size: 1.777em;
+    font-weight: 500;
+  }
+  .info-block-one__place,
+  .info-block-one__joined,
+  .info-block-one__profession {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    margin: 1em 0 0;
+  }
+  .info-block-one__place__icon,
+  .info-block-one__joined__icon {
+    margin-right: 0.317rem;
   }
   
-  .details {
-    text-align: center;
+  .icon.place-icon, .icon.joined-icon {
+    fill: #31353D;
+    margin-right: .4rem;
+    opacity: .54;
+  }
+  .icon.place-icon {
+    width: 20px;
+    height: 26px;
+  }
+  .icon.joined-icon {
+    width: 20px;
+    height: 20px;
   }
   
-  .profile-pic {
-    height: 6rem;
-    width: 6rem;
-    object-fit: center;
-    border-radius: 50%;
-    border: 2px solid #fff;
+  /* info block two */
+  
+  .info-block-two {
+    flex: 1;
+    padding-left: 10px;
+  }
+  .info-block-two h3 {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    opacity: .54;
   }
   
-  .location p {
-    display: inline-block;
+  @media only screen and (max-width: 540px) {
+    .info-block-two h3 {
+      margin-top: 2em;
+    }
   }
-  
-  .location svg {
-    vertical-align: middle;
+  .info-block-two p {
+    font-size: 1rem;
+    font-weight: 100;
+    opacity: 87;
   }
-  
-  .stats {
+  .ion {
     display: flex;
+    justify-content: space-between;
+    width: 11.5rem;
+  }
+  .icon.soc-icon {
+    width: 2rem;
+    height: 2.25rem;
+    fill: #31353D;
+    color: #31353D;
+  }
+  .soc-icon:hover {
+    fill: #445878;
+    color: #1C1D21;
   }
   
-  .stats .col-4 {
-    width: 10rem;
-    text-align: center;
+  /* FOOTER */
+  
+  footer {
+    position: relative;
+    height: 80px;
+    overflow: hidden;
+  }
+  .footerInner {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+  
+    background-color: #31353E;
+    transform: skewY(-3.5deg);
   }
   
-  .heading {
-    font-weight: 400;
-    font-size: 1.3rem;
-    margin: 1rem 0;
+  /* MISC */
+  
+  /* avatar */
+  
+  .avatar-hexagon {
+    position: relative;
+    width: 160px;
+    height: 92.38px;
+    margin: 46.19px 0;
+    background-image: url(https://dl.dropbox.com/s/v8y91kk4gkjp7eg/avatar.jpg);
+    background-size: auto 184.7521px;
+    background-position: center;
   }
-
-  .profile-text{
-    font-size: 16px;
-}
   
+  .avatar-hexTop,
+  .avatar-hexBottom {
+    position: absolute;
+    z-index: 1;
+    width: 113.14px;
+    height: 113.14px;
+    overflow: hidden;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background: inherit;
+    left: 23.43px;
+  }
   
+  /*counter transform the bg image on the caps*/
+  .avatar-hexTop:after,
+  .avatar-hexBottom:after {
+    content: "";
+    position: absolute;
+    width: 160.0000px;
+    height: 92.37604307034013px;
+    -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-46.1880px);
+    -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-46.1880px);
+    transform:          rotate(45deg) scaleY(1.7321) translateY(-46.1880px);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: inherit;
+  }
+  
+  .avatar-hexTop {
+    top: -56.5685px;
+  }
+  
+  .avatar-hexTop:after {
+    background-position: center top;
+  }
+  
+  .avatar-hexBottom {
+    bottom: -56.5685px;
+  }
+  
+  .avatar-hexBottom:after {
+    background-position: center bottom;
+  }
+  
+  .avatar-hexagon:after {
+    content: "";
+    position: absolute;
+    top: 0.0000px;
+    left: 0;
+    width: 160.0000px;
+    height: 92.3760px;
+    z-index: 2;
+    background: inherit;
+  }

@@ -72,8 +72,7 @@
                 "input": "src/theme/variables.css"
               }
             ],
-            "scripts": [ "./node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": [ "./node_modules/@popperjs/core/dist/umd/popper.min.js"]
           },
           "configurations": {
             "production": {
@@ -81,12 +80,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "10kb"
                 }
               ],
               "fileReplacements": [
