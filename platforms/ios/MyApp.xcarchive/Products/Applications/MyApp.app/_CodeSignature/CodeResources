@@ -18,11 +18,11 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/objects-13.0+.nib</key>
 		<data>
-		q/uFBS5n2UCG7NonkXZoZXeihG4=
+		gKmM/8ryT9FuB98pNQFGsorMj5Q=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/runtime.nib</key>
 		<data>
-		BShG2dGd0hzZDVQJxBJPgkZxpd4=
+		AZ9/5LRgwLscUZ6kDa6+gUXBHqI=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/objects-13.0+.nib</key>
 		<data>
-		IXHcbYbmC63Gyq5hPL1wJe0boNU=
+		oURXGf7jme/4yjN9oWVgVJcYQ4A=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/runtime.nib</key>
 		<data>
-		tEWOyEBmJaVGwjpEZGUZei6WC/k=
+		HHq+40RMmmHqY38JUEjoBJl8R2w=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		ZmC0rpBW+lzcf3ARFOrBw74kW7M=
+		f/kPdSq3wxG6ZqMn76qx91uI+ZU=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -310,11 +310,11 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		MPcCZDon5rtVQe9G3jyy4vkN8Dg=
+		61xzl1MtCMCdw+Xw9ui9l7sY2B0=
 		</data>
-		<key>www/main.ea2b20bccf84d09592ea.js</key>
+		<key>www/main.c6d67e35559977860575.js</key>
 		<data>
-		V2nA7XPxJdpdrAKy0hHDPPFEkVk=
+		F+uuuxFYuKhdj1f9D6tJFDd+oh4=
 		</data>
 		<key>www/plugins/cordova-plugin-device/www/device.js</key>
 		<data>
@@ -5728,14 +5728,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1EPixRhk5NBe8YLBAM5NhGRuzjqV3PHmTmDItKiiaPE=
+			VEBPS90MZ6JCIeqFrBPQtDSo4gMFFNpqklVcj/s5uYI=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KaA2qAXwNEZA195TSYXS1+PNpu3VomSe3T3zmT7BkTY=
+			ZY+45W14xu06AS6eRSOZhNH1fxHS6+Awv1RQsUuyGEE=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -5749,21 +5749,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			obSKifcRTS++RZKNSYwUTiTd+XjEiG3CuUMvip+XEf4=
+			VNrUPfKJgcWk3zO9CZwxVr1K7xWDxl9Nxso9nM9RBBk=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y/4BCY6b3TKaz5vZNcnuDClCF9qjQDHdLuuxe0wLLSs=
+			ITl6zEKPWXEPXzs4bHpOhd5Yyd4R099+RK4b5r+kXPY=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			63kUR5YKhUDEEScegYOjyf6WdW/lUfd8FsMUgW4rSrU=
+			y6vz8sxfkdar+LJaaOZ1QJO1SCgNOzM8jQK7+OCQuxw=
 			</data>
 		</dict>
 		<key>config.xml</key>
@@ -6225,14 +6225,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			e24RSWUU7bazDIWHzibGPhAcfAJ++L8yhmKRfWhwHvo=
+			sD+Yqtj46GkvavAocmQKtLMctq5PuCy8NFF8eXkOAPg=
 			</data>
 		</dict>
-		<key>www/main.ea2b20bccf84d09592ea.js</key>
+		<key>www/main.c6d67e35559977860575.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K3rzfDXPliZML4GLzeOLc7S0hjcc5L/Ya84FmSQuV+I=
+			6Ztt0UfJI1jfixg0Fr/8e37BtLLnYlYCyy730831xdM=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-device/www/device.js</key>
