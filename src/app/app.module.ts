@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
 import { UserProfileComponent } from './componets/user-profile/user-profile.component';
 import { TabsComponent } from './componets/tabs/tabs.component';
+import { EventCardComponent } from './componets/event-card/event-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
-    TabsComponent
+    TabsComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,
