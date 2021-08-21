@@ -9,6 +9,7 @@ import { TabsComponent } from './componets/tabs/tabs.component';
 import { EventCardComponent } from './componets/event-card/event-card.component';
 import { PostCommentsComponent } from './componets/post-comments/post-comments.component';
 import { VideoListComponent } from './componets/video-list/video-list.component';
+import { UserListComponent } from './componets/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VideoListComponent } from './componets/video-list/video-list.component'
     TabsComponent,
     EventCardComponent,
     PostCommentsComponent,
-    VideoListComponent
+    VideoListComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
