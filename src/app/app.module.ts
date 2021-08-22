@@ -11,6 +11,7 @@ import { PostCommentsComponent } from './componets/post-comments/post-comments.c
 import { VideoListComponent } from './componets/video-list/video-list.component';
 import { UserListComponent } from './componets/user-list/user-list.component';
 import { NavBarComponent } from './componets/nav-bar/nav-bar.component';
+import { SideBarComponent } from './componets/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavBarComponent } from './componets/nav-bar/nav-bar.component';
     PostCommentsComponent,
     VideoListComponent,
     UserListComponent,
-    NavBarComponent
+    NavBarComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
