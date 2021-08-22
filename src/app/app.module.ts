@@ -14,6 +14,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { RouteLoginComponent } from './routes/login/route-login/route-login.component';
 import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
+import { WallComponent } from './components/wall/wall.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RouteProfileComponent } from './routes/profile/route-profile/route-prof
     NavBarComponent,
     SideBarComponent,
     RouteLoginComponent,
-    RouteProfileComponent
+    RouteProfileComponent,
+    WallComponent
   ],
   imports: [
     BrowserModule,
