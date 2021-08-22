@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserProfileComponent } from './componets/user-profile/user-profile.component';
+import { RouteLoginComponent } from './routes/login/route-login/route-login.component';
+import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'profile',
+    redirectTo: 'login',
   },
-  { path: 'profile', component: UserProfileComponent },
+  { path: 'login', component: RouteLoginComponent },
+  { path: 'profile', component: RouteProfileComponent },
   {
     path: '**',
-    component: UserProfileComponent,
+    component: RouteLoginComponent,
   },
 ];
 
@@ -20,4 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const ArrayOfComponents = [UserProfileComponent];
+export const ArrayOfComponents = [RouteProfileComponent];
