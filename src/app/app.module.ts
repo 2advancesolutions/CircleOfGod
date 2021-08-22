@@ -4,14 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
-import { UserProfileComponent } from './componets/user-profile/user-profile.component';
-import { TabsComponent } from './componets/tabs/tabs.component';
-import { EventCardComponent } from './componets/event-card/event-card.component';
-import { PostCommentsComponent } from './componets/post-comments/post-comments.component';
-import { VideoListComponent } from './componets/video-list/video-list.component';
-import { UserListComponent } from './componets/user-list/user-list.component';
-import { NavBarComponent } from './componets/nav-bar/nav-bar.component';
-import { SideBarComponent } from './componets/side-bar/side-bar.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { PostCommentsComponent } from './components/post-comments/post-comments.component';
+import { VideoListComponent } from './components/video-list/video-list.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { RouteLoginComponent } from './routes/login/route-login/route-login.component';
+import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SideBarComponent } from './componets/side-bar/side-bar.component';
     VideoListComponent,
     UserListComponent,
     NavBarComponent,
-    SideBarComponent
+    SideBarComponent,
+    RouteLoginComponent,
+    RouteProfileComponent
   ],
   imports: [
     BrowserModule,
