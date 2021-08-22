@@ -5,8 +5,13 @@ import { RouteLoginComponent } from './routes/login/route-login/route-login.comp
 import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
 
 const routes: Routes = [
-  { path: 'login', component: RouteLoginComponent },
+  {
+    path: '',
+    pathMatch: 'full',
+    component: RouteLandingComponent
+  },
   { path: 'landing', component: RouteLandingComponent },
+  { path: 'login', component: RouteLoginComponent },
   { path: 'profile', component: RouteProfileComponent }
 ];
 
