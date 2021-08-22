@@ -213,8 +213,8 @@
   position: relative;
   background: #E4E9F7;
   height: 100vh;
-  left: 80px;
-  width: calc(100% - 77px);
+/*   left: 80px;
+  width: calc(100% - 77px); */
   transition: all 0.5s ease;
 }
 .sidebar.close ~ .home-section{
