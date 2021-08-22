@@ -15,6 +15,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { RouteLoginComponent } from './routes/login/route-login/route-login.component';
 import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
 import { WallComponent } from './components/wall/wall.component';
+import { LandingComponentRoute } from './routes/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { WallComponent } from './components/wall/wall.component';
     SideBarComponent,
     RouteLoginComponent,
     RouteProfileComponent,
-    WallComponent
+    WallComponent,
+    LandingComponentRoute
   ],
   imports: [
     BrowserModule,
