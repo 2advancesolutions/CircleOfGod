@@ -10,6 +10,8 @@ import { EventCardComponent } from './componets/event-card/event-card.component'
 import { PostCommentsComponent } from './componets/post-comments/post-comments.component';
 import { VideoListComponent } from './componets/video-list/video-list.component';
 import { UserListComponent } from './componets/user-list/user-list.component';
+import { NavBarComponent } from './componets/nav-bar/nav-bar.component';
+import { SideBarComponent } from './componets/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { UserListComponent } from './componets/user-list/user-list.component';
     EventCardComponent,
     PostCommentsComponent,
     VideoListComponent,
-    UserListComponent
+    UserListComponent,
+    NavBarComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
