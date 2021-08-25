@@ -17,7 +17,7 @@ import { RouteProfileComponent } from './routes/profile/route-profile/route-prof
 import { WallComponent } from './components/wall/wall.component';
 import { LandingComponentRoute } from './routes/landing/landing.component';
 import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule.forRoot()
   ],
   providers: [],

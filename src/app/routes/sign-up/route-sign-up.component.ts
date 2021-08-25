@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SupabaseService } from 'src/app/services/supabase.service';
 
 @Component({
@@ -7,25 +8,30 @@ import { SupabaseService } from 'src/app/services/supabase.service';
   styleUrls: ['./route-sign-up.component.scss']
 })
 export class RouteSignUpComponent implements OnInit {
+  constructor(private readonly supabase: SupabaseService, private fb: FormBuilder) { }
   public loading = false;
-  public phoneNumber: any = null;
-  public password: any = null;
-  constructor(private readonly supabase: SupabaseService) { }
-  ngOnInit(): void {
-   
+  public userPhone: any;
+  public userPassword: any;
+
+  ngOnInit() {
+  
   }
 
-  async signUp() {
-
+  public async test() {
+   
     try {
       this.loading = true;
-      await this.supabase.signUpWithPhone(this.phoneNumber, this.password);
-      alert('Check your email for the login link!');
+      await this.supabase.signUpWithPhone(this.userPhone);
+      alert('sending verfication code to you phone please enter');
     } catch (error) {
       alert(error.error_description || error.message)
     } finally {
       this.loading = false;
     }
+  }
+ public async onSubmit(form: FormGroup) {
+  
+     
   }
 
 }
