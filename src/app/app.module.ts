@@ -16,6 +16,8 @@ import { RouteLoginComponent } from './routes/login/route-login/route-login.comp
 import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
 import { WallComponent } from './components/wall/wall.component';
 import { LandingComponentRoute } from './routes/landing/landing.component';
+import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,11 +33,13 @@ import { LandingComponentRoute } from './routes/landing/landing.component';
     RouteLoginComponent,
     RouteProfileComponent,
     WallComponent,
-    LandingComponentRoute
+    LandingComponentRoute,
+    RouteSignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     IonicModule.forRoot()
   ],
   providers: [],
