@@ -9,19 +9,14 @@ import { SupabaseService } from 'src/app/services/supabase.service';
 })
 export class RouteSignUpComponent implements OnInit {
   constructor(private readonly supabase: SupabaseService, private fb: FormBuilder) { }
-  public loading = false;
-  public userPhone: any;
-  public userPassword: any;
-
-  ngOnInit() {
-  
-  }
-
-  public async test() {
-   
+  public loading: boolean = false;
+  public userPhone: any | null;
+  public userPassword: any | null;;
+  ngOnInit() {}
+  public async signUp(): Promise<void> {
     try {
       this.loading = true;
-      await this.supabase.signUpWithPhone(this.userPhone);
+      await this.supabase.signUpWithPhone(this.userPhone, this.userPassword);
       alert('sending verfication code to you phone please enter');
     } catch (error) {
       alert(error.error_description || error.message)
@@ -29,9 +24,4 @@ export class RouteSignUpComponent implements OnInit {
       this.loading = false;
     }
   }
- public async onSubmit(form: FormGroup) {
-  
-     
-  }
-
 }
