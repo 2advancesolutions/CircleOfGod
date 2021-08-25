@@ -1,81 +1,78 @@
-import { Injectable } from '@angular/core';
-import {AuthChangeEvent, createClient, Session, SupabaseClient} from '@supabase/supabase-js';
+import { Injectable, OnInit, Provider } from '@angular/core';
+import {AuthChangeEvent, createClient, PostgrestSingleResponse, Session, Subscription, SupabaseClient, User} from '@supabase/supabase-js';
 import { environment } from 'src/environments/environment';
-
 
 export interface Profile {
   username: string;
   website: string;
   avatar_url: string;
 }
-
+export interface ISession {
+  session: Session | null;
+  user: User | null;
+  provider?: Provider | undefined;
+  url?: string | null | undefined;
+  error: Error | null;
+  data: Session | null;
+}
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class SupabaseService {
+export class SupabaseService implements OnInit {
   private supabase: SupabaseClient;
-
   constructor() {
-    this.supabase = createClient(environment.supabaseUrl, environment.supbaseKey);
+    this.supabase = createClient(
+      environment.supabaseUrl,
+      environment.supbaseKey
+    );
   }
-
-  get user() {
+  ngOnInit(): void {}
+  get user(): User | null {
     return this.supabase.auth.user();
   }
-
-  get session() {
+  get session(): Session | null {
     return this.supabase.auth.session();
   }
-
-  get profile() {
+  get profile(): PromiseLike<PostgrestSingleResponse<any>> {
     return this.supabase
       .from('profiles')
       .select(`username, website, avatar_url`)
       .eq('id', this.user?.id)
       .single();
   }
-
-  authChanges(callback: (event: AuthChangeEvent, session: Session | null) => void) {
+  public authChanges(callback: (event: AuthChangeEvent, session: Session | null) => void): {
+    data: Subscription | null;
+    error: Error | null;
+  } {
     return this.supabase.auth.onAuthStateChange(callback);
   }
-
-  signIn(email: string) {
-    return this.supabase.auth.signIn({email});
+  public signIn<T>(email: string): Promise<any> {
+    return this.supabase.auth.signIn({ email });
   }
- signUpWithPhone(phone: any){
-   phone = '+1' + phone;
-  return this.supabase.auth.signUp(
-    {
-      phone: phone,
-      password: 'some-password'
-    }
-  );
- }
-  
-
-  signOut() {
+  public signUpWithPhone(phone: any, password: any ='$Edssukds'): Promise<any> {
+    return this.supabase.auth.signUp({
+      phone: '+1' + phone,
+      password: password,
+    });
+  }
+  public signOut() {
     return this.supabase.auth.signOut();
   }
-
-  updateProfile(profile: Profile) {
+  public updateProfile(profile: Profile) {
     const update = {
       ...profile,
       id: this.user?.id,
-      updated_at: new Date()
-    }
-
+      updated_at: new Date(),
+    };
     return this.supabase.from('profiles').upsert(update, {
-      returning: 'minimal', // Don't return the value after inserting
+      returning: 'minimal', 
     });
   }
-
-  downLoadImage(path: string) {
+  public downLoadImage(path: string) {
     return this.supabase.storage.from('avatars').download(path);
   }
 
-  uploadAvatar(filePath: string, file: File) {
-    return this.supabase.storage
-      .from('avatars')
-      .upload(filePath, file);
+  public uploadAvatar(filePath: string, file: File) {
+    return this.supabase.storage.from('avatars').upload(filePath, file);
   }
 }
