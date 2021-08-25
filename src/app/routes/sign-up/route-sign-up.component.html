@@ -7,6 +7,7 @@
   <!-- Hero Start -->
   <section class="bg-auth-home d-table w-100">
     <div class="container">
+    
       <div class="row align-items-center">
         <div class="col-lg-7 col-md-6">
           <div class="me-lg-5">
@@ -46,7 +47,7 @@
                       <label class="form-label">Your Phone Number <span class="text-danger">*</span></label>
                       <div class="form-icon position-relative">
             <!--             <i-feather name="mail" class="fea icon-sm icons"></i-feather> -->
-                        <input type="Phone Number" class="form-control ps-5" [(ngModel)]="phoneNumber" placeholder="Phone Number" name="Phone Number" required="">
+                        <input type="Phone Number" class="form-control ps-5" [(ngModel)]='userPhone' placeholder="Phone Number" name="Phone Number" required="">
                       </div>
                     </div>
                   </div>
@@ -57,7 +58,7 @@
                       <label class="form-label">Password <span class="text-danger">*</span></label>
                       <div class="form-icon position-relative">
                        <!--  <i-feather name="key" class="fea icon-sm icons"></i-feather> -->
-                        <input type="password" class="form-control ps-5" [(ngModel)]="password" placeholder="Password" required="">
+                        <input type="password" class="form-control ps-5" [(ngModel)]='userPassword' placeholder="Password" required="">
                       </div>
                     </div>
                   </div>
@@ -76,7 +77,7 @@
   
                   <div class="col-md-12">
                     <div class="d-grid">
-                      <button class="btn btn-primary" (click)="signUp()">Register</button>
+                      <button class="btn btn-primary" (click)="test()">Register</button>
                     </div>
                   </div>
                   <!--end col-->
@@ -115,6 +116,7 @@
         </div>
         <!--end col-->
       </div>
+
       <!--end row-->
     </div>
     <!--end container-->

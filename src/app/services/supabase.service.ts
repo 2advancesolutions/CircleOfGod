@@ -42,8 +42,14 @@ export class SupabaseService {
   signIn(email: string) {
     return this.supabase.auth.signIn({email});
   }
- signUpWithPhone(phone: any, password: any){
-  return this.supabase.auth.signUp({phone, password});
+ signUpWithPhone(phone: any){
+   phone = '+1' + phone;
+  return this.supabase.auth.signUp(
+    {
+      phone: phone,
+      password: 'some-password'
+    }
+  );
  }
   
 
