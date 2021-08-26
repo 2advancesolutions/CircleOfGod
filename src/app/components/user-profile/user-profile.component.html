@@ -1,133 +1,387 @@
+<!-- Hero Start -->
+<br><br><br><br>
+<ng-container>
+<div class="container">
+<section class="bg-profile d-table w-100 bg-primary" style="margin-top: 100px;"
+  style="background: url('assets/images/account/bg.png') center center;" id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card public-profile border-0 rounded shadow " style="z-index: 1;">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-lg-2 col-md-3 text-md-start text-center">
+                <img src="assets/images/client/05.jpg" class="avatar avatar-large rounded-circle shadow d-block mx-auto"
+                  alt="">
+              </div>
+              <!--end col-->
 
-
-<svg width="0" height="0" style="display:none;">
-  <defs>
-    <polygon id="svg-icon-border" stroke="currentColor" fill="none" points="18 2 34 11 34 29 18 38 2 29 2 11" />
-  </defs>
-  <symbol id="svg-icon-facebook" viewBox="0 0 36 40">
-    <use href="#svg-icon-border" />
-    <path d="M22,12.1153846 C21.75,12.0769231 20.8888889,12 19.8888889,12 C17.7962963,12 16.3611111,13.3269231 16.3611111,15.7596154 L16.3611111,17.8557692 L14,17.8557692 L14,20.7019231 L16.3611111,20.7019231 L16.3611111,28 L19.1944444,28 L19.1944444,20.7019231 L21.5462963,20.7019231 L21.9074074,17.8557692 L19.1944444,17.8557692 L19.1944444,16.0384615 C19.1944444,15.2211538 19.4074074,14.6538462 20.5462963,14.6538462 L22,14.6538462 L22,12.1153846 Z" />
-  </symbol>
-  <symbol id="svg-icon-instagram" viewBox="0 0 36 40">
-    <use href="#svg-icon-border" />
-    <path d="M14.6666667,20 C14.6666667,17.7777667 15.7777667,16.6666667 18,16.6666667 C20.2222333,16.6666667 21.3333333,17.7777667 21.3333333,20 C21.3333333,22.2222333 20.2222333,23.3333333 18,23.3333333 C15.7777667,23.3333333 14.6666667,22.2222333 14.6666667,20 Z M14.7083333,16.7083333 C14.1249971,17.2916696 13.7361121,17.9444408 13.5416667,18.6666667 L10,18.6666667 L10,14 C10,13.4166637 10.1944425,12.9444463 10.5833333,12.5833333 C11.02778,12.1944425 11.5138862,12 12.0416667,12 L24.0416667,12 C24.5694471,12 25.0277758,12.1944425 25.4166667,12.5833333 C25.8055575,12.9722242 26,13.4444417 26,14 L26,18.6666667 L22.5,18.6666667 C22.3055546,17.9444408 21.9166696,17.2916696 21.3333333,16.7083333 C20.4166621,15.7916621 19.3055621,15.3333333 18,15.3333333 C16.7222158,15.3333333 15.6250046,15.7916621 14.7083333,16.7083333 Z M24.6666667,15.5 L24.6666667,13.875 C24.6666667,13.7361104 24.6111117,13.6111117 24.5,13.5 C24.3888883,13.3888883 24.2638896,13.3333333 24.125,13.3333333 L22.5416667,13.3333333 C22.4027771,13.3333333 22.2777783,13.3888883 22.1666667,13.5 C22.055555,13.6111117 22,13.7361104 22,13.875 L22,15.5 C22,15.6388896 22.055555,15.7638883 22.1666667,15.875 C22.2500004,15.9583338 22.3749992,16 22.5416667,16 L24.125,16 C24.2916675,16 24.4166662,15.9583338 24.5,15.875 C24.6111117,15.7638883 24.6666667,15.6388896 24.6666667,15.5 Z M21.3333333,23.2916667 C22.2222267,22.4027733 22.6666667,21.3055621 22.6666667,20 L26,20 L26,26 C26,26.5000025 25.8055575,26.97222 25.4166667,27.4166667 C25.0555537,27.8055575 24.597225,28 24.0416667,28 L12.0416667,28 C11.4861083,28 11.0138908,27.8055575 10.625,27.4166667 C10.2083313,26.9999979 10,26.5277804 10,26 L10,20 L13.375,20 C13.375,21.3055621 13.81944,22.4027733 14.7083333,23.2916667 C15.6250046,24.2083379 16.7222158,24.6666667 18,24.6666667 C19.3055621,24.6666667 20.4166621,24.2083379 21.3333333,23.2916667 Z" />
-  </symbol>
-  <symbol id="svg-icon-twitter" viewBox="0 0 36 40">
-    <use href="#svg-icon-border" />
-    <path d="M26,15.5572917 C25.5932183,16.1892393 25.0508508,16.7534697 24.3728814,17.25 L24.3728814,17.65625 C24.3728814,20.0260535 23.5197825,22.1757716 21.8135593,24.1054688 C20.1073361,26.0351659 17.841822,27 15.0169492,27 C13.2090305,27 11.5367308,26.5034772 10,25.5104167 C10.3615837,25.5555558 10.6214681,25.578125 10.779661,25.578125 C12.2937929,25.578125 13.6497115,25.1041714 14.8474576,24.15625 C14.1468892,24.1336804 13.5141271,23.9136306 12.9491525,23.4960938 C12.384178,23.0785569 12.000001,22.542538 11.7966102,21.8880208 C12.067798,21.9331599 12.2711858,21.9557292 12.4067797,21.9557292 C12.6327695,21.9557292 12.9265519,21.9105907 13.2881356,21.8203125 C12.5423692,21.6623256 11.9152568,21.2842912 11.4067797,20.6861979 C10.8983025,20.0881046 10.6440678,19.3941012 10.6440678,18.6041667 L10.6440678,18.5703125 C11.1412454,18.8411472 11.6384156,18.9765625 12.1355932,18.9765625 C11.1638369,18.3446149 10.6779661,17.4305615 10.6779661,16.234375 C10.6779661,15.6701361 10.8248573,15.1284748 11.1186441,14.609375 C12.8587658,16.7534829 15.1073308,17.8932285 17.8644068,18.0286458 C17.8192088,17.8706589 17.7966102,17.6223975 17.7966102,17.2838542 C17.7966102,16.3585023 18.1129912,15.5798643 18.7457627,14.9479167 C19.3785342,14.3159691 20.1581875,14 21.0847458,14 C22.0113041,14 22.8022566,14.3498229 23.4576271,15.0494792 C24.1355966,14.9366314 24.8361546,14.6658008 25.559322,14.2369792 C25.3333322,15.0269137 24.8474614,15.6362826 24.1016949,16.0651042 C24.8022634,15.9973955 25.4350254,15.8281264 26,15.5572917 Z" /> 
-  </symbol>
-  <symbol id="svg-icon-vk" viewBox="0 0 36 40">
-    <use href="#svg-icon-border" />
-    <path d="M25.9774576,16.650837 C25.9774576,16.650837 25.8608322,16.3223177 25.1360885,16.4126605 L22.7369372,16.4290864 C22.5536687,16.4044475 22.4203825,16.4783643 22.4203825,16.4783643 C22.4203825,16.4783643 22.278766,16.5522812 22.2121229,16.7329668 C21.8205947,17.7267377 21.3207715,18.5808879 21.3207715,18.5808879 C20.254482,20.3713181 19.8213019,20.4698739 19.6463638,20.3548921 C19.2381749,20.1002896 19.3464699,19.3200563 19.3464699,18.7615735 C19.3464699,17.0204212 19.6130423,16.2976787 18.8216556,16.1087801 C18.5634136,16.0512892 18.3718147,16.0102243 17.6970534,16.0020113 C16.8390236,15.9937984 16.1142799,16.0020113 15.706091,16.1991229 C15.4311883,16.3305306 15.2229286,16.626198 15.3478844,16.642624 C15.5061617,16.6672629 15.8643683,16.7411798 16.0559672,16.9957822 C16.0559672,16.9957822 16.2642269,17.3325145 16.2975484,18.071683 C16.3891827,20.1167156 15.964333,20.3713181 15.964333,20.3713181 C15.6394479,20.5437907 15.0729816,20.2563363 14.239943,18.5644619 C14.239943,18.5644619 13.7567806,17.7267377 13.3819132,16.8068836 C13.3152701,16.634411 13.1819839,16.5440682 13.1819839,16.5440682 C13.1819839,16.5440682 13.0320369,16.4290864 12.8154469,16.3962345 L10.532921,16.4126605 C10.1830448,16.4126605 10.058089,16.5687071 10.058089,16.5687071 C10.058089,16.5687071 9.93313316,16.7001149 10.0497586,16.9711433 C11.8324613,21.1022735 13.8650756,23.1719451 13.8650756,23.1719451 C13.8650756,23.1719451 15.7227518,25.0855701 17.8303396,24.9541623 L18.788334,24.9541623 C19.0798975,24.9295234 19.2298445,24.7734767 19.2298445,24.7734767 C19.2298445,24.7734767 19.3631307,24.625643 19.3548003,24.3546146 C19.3381395,23.0898153 19.9379273,22.9009167 19.9379273,22.9009167 C20.5210544,22.7202311 21.2707892,24.1246511 22.0705063,24.666708 C22.0705063,24.666708 22.6786245,25.0773571 23.1367958,24.9870143 L25.2693747,24.9541623 C26.3939769,24.9459494 25.8608322,24.0260953 25.8608322,24.0260953 C25.8191802,23.9521785 25.5526079,23.3854827 24.2697283,22.2110262 C22.9368665,20.9872918 23.1118046,21.1844033 24.7278996,19.0654538 C25.7108852,17.7760156 26.1024134,16.9875693 25.9774576,16.650837 Z" />
-  </symbol>
-  <symbol id="svg-icon-pin" viewBox="0 0 20 26">
-    <path d="M10.09375,1 C11.500007,1 12.757807,1.24218508 13.8671875,1.7265625 C14.976568,2.21093992 15.9101525,2.87108957 16.6679688,3.70703125 C17.425785,4.54297293 18.0039043,5.51561945 18.4023438,6.625 C18.8007832,7.73438055 19,8.90624383 19,10.140625 C19,11.3906313 18.7539087,12.6679622 18.2617188,13.9726562 C17.7695288,15.2773503 17.1484413,16.5585875 16.3984375,17.8164062 C15.6484337,19.074225 14.8359419,20.2656194 13.9609375,21.390625 C13.0859331,22.5156306 12.2656288,23.5156206 11.5,24.390625 C11.5,24.4062501 11.3828137,24.5117178 11.1484375,24.7070312 C10.9140613,24.9023447 10.6406266,25 10.328125,25 L10.2578125,25 C9.92968586,25 9.65234488,24.9023447 9.42578125,24.7070312 C9.19921762,24.5117178 9.0859375,24.4062501 9.0859375,24.390625 C8.27343344,23.4531203 7.39453598,22.429693 6.44921875,21.3203125 C5.50390152,20.210932 4.62891027,19.0429749 3.82421875,17.8164062 C3.01952723,16.5898376 2.34765895,15.3281315 1.80859375,14.03125 C1.26952855,12.7343685 1,11.4375065 1,10.140625 C1,8.90624383 1.24218508,7.73438055 1.7265625,6.625 C2.21093992,5.51561945 2.86718336,4.54297293 3.6953125,3.70703125 C4.52344164,2.87108957 5.48827574,2.21093992 6.58984375,1.7265625 C7.69141176,1.24218508 8.85936883,1 10.09375,1 Z M10.375,23.3828125 C11.5625059,22.0234307 12.601558,20.7265687 13.4921875,19.4921875 C14.382817,18.2578063 15.124997,17.0898493 15.71875,15.9882812 C16.312503,14.8867132 16.757811,13.8476611 17.0546875,12.8710938 C17.351564,11.8945264 17.5,10.9843792 17.5,10.140625 C17.5,9.18749523 17.3554702,8.25391082 17.0664062,7.33984375 C16.7773423,6.42577668 16.328128,5.60937859 15.71875,4.890625 C15.109372,4.17187141 14.3398484,3.59375219 13.4101562,3.15625 C12.4804641,2.71874781 11.3750064,2.5 10.09375,2.5 C9.06249484,2.5 8.08594211,2.70312297 7.1640625,3.109375 C6.24218289,3.51562703 5.43750344,4.06640277 4.75,4.76171875 C4.06249656,5.45703473 3.51562703,6.2695266 3.109375,7.19921875 C2.70312297,8.1289109 2.5,9.10936984 2.5,10.140625 C2.5,11.2500055 2.73437266,12.3749943 3.203125,13.515625 C3.67187734,14.6562557 4.26562141,15.7773382 4.984375,16.8789062 C5.70312859,17.9804743 6.4921832,19.0429636 7.3515625,20.0664062 C8.2109418,21.0898489 9.02343367,22.0468705 9.7890625,22.9375 L10.1875,23.3828125 L10.28125,23.4765625 C10.2968751,23.4609374 10.3164061,23.4453126 10.3398438,23.4296875 C10.3632814,23.4140624 10.375,23.3984376 10.375,23.3828125 Z M10.0234375,5.5234375 C11.2734437,5.5234375 12.3359331,5.96483934 13.2109375,6.84765625 C14.0859419,7.73047316 14.5234375,8.78905633 14.5234375,10.0234375 C14.5234375,11.2734438 14.0859419,12.3359331 13.2109375,13.2109375 C12.3359331,14.0859419 11.2734437,14.5234375 10.0234375,14.5234375 C8.78905633,14.5234375 7.73047316,14.0859419 6.84765625,13.2109375 C5.96483934,12.3359331 5.5234375,11.2734438 5.5234375,10.0234375 C5.5234375,8.78905633 5.96483934,7.73047316 6.84765625,6.84765625 C7.73047316,5.96483934 8.78905633,5.5234375 10.0234375,5.5234375 Z M10.0234375,13.0234375 C10.8515666,13.0234375 11.5546846,12.7265655 12.1328125,12.1328125 C12.7109404,11.5390595 13,10.8281291 13,10 C13,9.17187086 12.7070342,8.46484668 12.1210938,7.87890625 C11.5351533,7.29296582 10.8281291,7 10,7 C9.17187086,7 8.46484668,7.29296582 7.87890625,7.87890625 C7.29296582,8.46484668 7,9.17187086 7,10 C7,10.8281291 7.29687203,11.5390595 7.890625,12.1328125 C8.48437797,12.7265655 9.19530836,13.0234375 10.0234375,13.0234375 Z" />
-  </symbol>
-  <symbol id="svg-icon-calendar" viewBox="0 0 20 20">
-    <path d="M17.875,2.6875 C18.1914078,2.6875 18.4580067,2.79589735 18.6748047,3.01269531 C18.8916026,3.22949327 19,3.49609217 19,3.8125 L19,17.875 C19,18.179689 18.8916026,18.4433583 18.6748047,18.6660156 C18.4580067,18.888673 18.1914078,19 17.875,19 L2.125,19 C1.80859217,19 1.54199327,18.888673 1.32519531,18.6660156 C1.10839735,18.4433583 1,18.179689 1,17.875 L1,3.8125 C1,3.49609217 1.10839735,3.22949327 1.32519531,3.01269531 C1.54199327,2.79589735 1.80859217,2.6875 2.125,2.6875 L6.625,2.6875 L6.625,1.5625 C6.625,1.41015549 6.68066351,1.27832087 6.79199219,1.16699219 C6.90332087,1.05566351 7.03515549,1 7.1875,1 C7.33984451,1 7.47167913,1.05566351 7.58300781,1.16699219 C7.69433649,1.27832087 7.75,1.41015549 7.75,1.5625 L7.75,2.6875 L12.25,2.6875 L12.25,1.5625 C12.25,1.41015549 12.3056635,1.27832087 12.4169922,1.16699219 C12.5283209,1.05566351 12.6601555,1 12.8125,1 C12.9648445,1 13.0966791,1.05566351 13.2080078,1.16699219 C13.3193365,1.27832087 13.375,1.41015549 13.375,1.5625 L13.375,2.6875 L17.875,2.6875 Z M17.875,17.875 L17.875,3.8125 L13.375,3.8125 L13.375,4.375 C13.375,4.52734451 13.3193365,4.65917913 13.2080078,4.77050781 C13.0966791,4.88183649 12.9648445,4.9375 12.8125,4.9375 C12.6601555,4.9375 12.5283209,4.88183649 12.4169922,4.77050781 C12.3056635,4.65917913 12.25,4.52734451 12.25,4.375 L12.25,3.8125 L7.75,3.8125 L7.75,4.375 C7.75,4.52734451 7.69433649,4.65917913 7.58300781,4.77050781 C7.47167913,4.88183649 7.33984451,4.9375 7.1875,4.9375 C7.03515549,4.9375 6.90332087,4.88183649 6.79199219,4.77050781 C6.68066351,4.65917913 6.625,4.52734451 6.625,4.375 L6.625,3.8125 L2.125,3.8125 L2.125,17.875 L17.875,17.875 Z M13.9375,10 C13.7851555,10 13.6533209,9.94433649 13.5419922,9.83300781 C13.4306635,9.72167913 13.375,9.58984451 13.375,9.4375 L13.375,8.3125 C13.375,8.16015549 13.4306635,8.02832087 13.5419922,7.91699219 C13.6533209,7.80566351 13.7851555,7.75 13.9375,7.75 L15.0625,7.75 C15.2148445,7.75 15.3466791,7.80566351 15.4580078,7.91699219 C15.5693365,8.02832087 15.625,8.16015549 15.625,8.3125 L15.625,9.4375 C15.625,9.58984451 15.5693365,9.72167913 15.4580078,9.83300781 C15.3466791,9.94433649 15.2148445,10 15.0625,10 L13.9375,10 Z M13.9375,14.5 C13.7851555,14.5 13.6533209,14.4443365 13.5419922,14.3330078 C13.4306635,14.2216791 13.375,14.0898445 13.375,13.9375 L13.375,12.8125 C13.375,12.6601555 13.4306635,12.5283209 13.5419922,12.4169922 C13.6533209,12.3056635 13.7851555,12.25 13.9375,12.25 L15.0625,12.25 C15.2148445,12.25 15.3466791,12.3056635 15.4580078,12.4169922 C15.5693365,12.5283209 15.625,12.6601555 15.625,12.8125 L15.625,13.9375 C15.625,14.0898445 15.5693365,14.2216791 15.4580078,14.3330078 C15.3466791,14.4443365 15.2148445,14.5 15.0625,14.5 L13.9375,14.5 Z M10.5625,12.25 C10.7148445,12.25 10.8466791,12.3056635 10.9580078,12.4169922 C11.0693365,12.5283209 11.125,12.6601555 11.125,12.8125 L11.125,13.9375 C11.125,14.0898445 11.0693365,14.2216791 10.9580078,14.3330078 C10.8466791,14.4443365 10.7148445,14.5 10.5625,14.5 L9.4375,14.5 C9.28515549,14.5 9.15332087,14.4443365 9.04199219,14.3330078 C8.93066351,14.2216791 8.875,14.0898445 8.875,13.9375 L8.875,12.8125 C8.875,12.6601555 8.93066351,12.5283209 9.04199219,12.4169922 C9.15332087,12.3056635 9.28515549,12.25 9.4375,12.25 L10.5625,12.25 Z M10.5625,7.75 C10.7148445,7.75 10.8466791,7.80566351 10.9580078,7.91699219 C11.0693365,8.02832087 11.125,8.16015549 11.125,8.3125 L11.125,9.4375 C11.125,9.58984451 11.0693365,9.72167913 10.9580078,9.83300781 C10.8466791,9.94433649 10.7148445,10 10.5625,10 L9.4375,10 C9.28515549,10 9.15332087,9.94433649 9.04199219,9.83300781 C8.93066351,9.72167913 8.875,9.58984451 8.875,9.4375 L8.875,8.3125 C8.875,8.16015549 8.93066351,8.02832087 9.04199219,7.91699219 C9.15332087,7.80566351 9.28515549,7.75 9.4375,7.75 L10.5625,7.75 Z M6.0625,7.75 C6.21484451,7.75 6.34667913,7.80566351 6.45800781,7.91699219 C6.56933649,8.02832087 6.625,8.16015549 6.625,8.3125 L6.625,9.4375 C6.625,9.58984451 6.56933649,9.72167913 6.45800781,9.83300781 C6.34667913,9.94433649 6.21484451,10 6.0625,10 L4.9375,10 C4.78515549,10 4.65332087,9.94433649 4.54199219,9.83300781 C4.43066351,9.72167913 4.375,9.58984451 4.375,9.4375 L4.375,8.3125 C4.375,8.16015549 4.43066351,8.02832087 4.54199219,7.91699219 C4.65332087,7.80566351 4.78515549,7.75 4.9375,7.75 L6.0625,7.75 Z M6.0625,12.25 C6.21484451,12.25 6.34667913,12.3056635 6.45800781,12.4169922 C6.56933649,12.5283209 6.625,12.6601555 6.625,12.8125 L6.625,13.9375 C6.625,14.0898445 6.56933649,14.2216791 6.45800781,14.3330078 C6.34667913,14.4443365 6.21484451,14.5 6.0625,14.5 L4.9375,14.5 C4.78515549,14.5 4.65332087,14.4443365 4.54199219,14.3330078 C4.43066351,14.2216791 4.375,14.0898445 4.375,13.9375 L4.375,12.8125 C4.375,12.6601555 4.43066351,12.5283209 4.54199219,12.4169922 C4.65332087,12.3056635 4.78515549,12.25 4.9375,12.25 L6.0625,12.25 Z" />
-  </symbol>
-  <symbol id="svg-icon-follow-button" viewBox="0 0 52 58">
-    <path d="M26 5l21 12v24L26 53 5 41V17z"/>
-    <path fill="currentColor" d="M27.1182 27.8113H32v1.9812h-4.8818V35h-2.2364v-5.2075H20v-1.9812h4.8818V23h2.2364"/>
-  </symbol>
-</svg>
-<section class="wrapper">
-  <header>
-    <div class="userBgImage"></div>
-  </header>
-  <main>
-    <section class="block-one">
-      <div class="avatar">
-        <div class="avatar-hexagon">
-          <div class="avatar-hexTop"></div>
-          <div class="avatar-hexBottom"></div>
-          <a href="#" aria-label="follow">
-            <svg class="icon icon-follow-button">
-              <use href="#svg-icon-follow-button"/>
-            </svg>
-          </a>
+              <div class="col-lg-10 col-md-9">
+                <div class="row align-items-end">
+                  <div class="col-md-7 text-md-start text-center mt-4 mt-sm-0">
+                    <h3 class="title mb-0">Krista Joseph</h3>
+                    <small class="text-muted h6 me-2">Web Developer</small>
+                    <ul class="list-inline mb-0 mt-3">
+                      <li class="list-inline-item me-2"><a href="javascript:void(0)" class="text-muted"
+                          title="Instagram">
+                         <!--  <i-feather name="instagram" class="fea icon-sm me-2"></i-feather> -->krista_joseph
+                        </a></li>
+                      <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="Linkedin">
+                         <!--  <i-feather name="linkedin" class="fea icon-sm me-2"></i-feather> -->Krista Joseph
+                        </a></li>
+                    </ul>
+                  </div>
+                  <!--end col-->
+                  <div class="col-md-5 text-md-end text-center">
+                    <ul class="list-unstyled social-icon social mb-0 mt-4">
+                      <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" data-bs-toggle="tooltip"
+                          data-bs-placement="bottom" title="Add Friend"><i
+                            class="uil uil-user-plus align-middle"></i></a></li>
+                      <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded"
+                          data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messages"><i
+                            class="uil uil-comment align-middle"></i></a>
+                      </li>
+                      <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded"
+                          data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications"><i
+                            class="uil uil-bell align-middle"></i></a>
+                      </li>
+                      <li class="list-inline-item ms-1"><a routerLink="/account-setting" class="rounded"
+                          data-bs-toggle="tooltip" data-bs-placement="bottom" title="Settings"><i
+                            class="uil uil-cog align-middle"></i></a></li>
+                    </ul>
+                    <!--end icon-->
+                  </div>
+                  <!--end col-->
+                </div>
+                <!--end row-->
+              </div>
+              <!--end col-->
+            </div>
+            <!--end row-->
+          </div>
         </div>
       </div>
-      <div class="profile-stats">
-        <div class="profile-stats__block">
-          <h2>followers</h2>
-          <p>257</p>
-        </div>
-        <div class="profile-stats__block">
-          <h2>following</h2>
-          <p>32</p>
-        </div>
-        <div class="profile-stats__block">
-          <h2>likes</h2>
-          <p>467</p>
-        </div>
-      </div>
-    </section>
-    <section class="block-two">
-      <div class="info-block-one">
-        <h1>Roger Jordan</h1>
-        <p class="info-block-one__profession">
-          Worship Pastor<br> Kids Teacher
-        </p>
-        <p class="info-block-one__place">
-          <svg class="icon place-icon">
-            <use href="#svg-icon-pin" />
-          </svg>
-          <span class="info-block-one__place__text">Missouri, MO</span>
-        </p>
-        <p class="info-block-one__joined">
-          <svg class="icon joined-icon">
-            <use href="#svg-icon-calendar" />
-          </svg>
-          <span class="info-block-one__joined__text">Joined November 2016</span>
-        </p>
-      </div>
-      <div class="info-block-two">
-        <h3>about me</h3>
-        <p>Lake Hills Church is located in Ocark, Missouri.  Just south of Springfield the fastest growing county in Missouri.  We are looking for the part-time individual of the Lord’s choosing to lead our worship band as we help people in following Jesus one step at a time. This part-time position includes leading worship regularly on Sunday mornings and team rehearsals.</p>
-        <h3>Me on social media</h3>
-        <div class="ion" id="sb">
-          <a href="https://www.facebook.com" target="_blank">
-            <svg class="icon soc-icon">
-              <use href="#svg-icon-facebook" />
-            </svg>
-          </a>
-          <a href="https://www.instagram.com" target="_blank">
-            <svg class="icon soc-icon">
-              <use href="#svg-icon-instagram" />
-            </svg>
-          </a>
-          <a href="https://www.twitter.com" target="_blank">
-            <svg class="icon soc-icon">
-              <use href="#svg-icon-twitter" />
-            </svg>
-          </a>
-          <a href="https://www.vk.com" target="_blank">
-            <svg class="icon soc-icon">
-              <use href="#svg-icon-vk" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footerInner"></div>
-  </footer>
-</section>
-
-
-
-<div class="row">
-  <div class="col-lg-6 col-sm-12">
-    <app-post-comments></app-post-comments>
-  <!--   <app-user-list></app-user-list> -->
-<br><br>
-</div>
-<div class="col-lg-6 col-sm-12 mr-1">
-  <app-event-card></app-event-card>
-  <br>
-  <app-video-list></app-video-list>
-  <br><br>
+      <!--end col-->
+    </div>
+    <!--end row-->
   </div>
+  <!--ed container-->
+</section>
+<!--end section-->
+<!-- Hero End -->
+
+<!-- Profile Start -->
+<section class="section mt-60">
+  <div class="container mt-lg-3">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
+        <div class="sidebar sticky-bar p-4 rounded shadow">
+          <div class="widget">
+            <h5 class="widget-title">Followers :</h5>
+            <div class="row mt-4">
+              <div class="col-6 text-center">
+               <!--  <i-feather name="user-plus" class="fea icon-ex-md text-primary mb-1"></i-feather> -->
+                <h5 class="mb-0">2588</h5>
+                <p class="text-muted mb-0">Followers</p>
+              </div>
+              <!--end col-->
+
+              <div class="col-6 text-center">
+              <!--   <i-feather name="users" class="fea icon-ex-md text-primary mb-1"></i-feather> -->
+                <h5 class="mb-0">454</h5>
+                <p class="text-muted mb-0">Following</p>
+              </div>
+              <!--end col-->
+            </div>
+            <!--end row-->
+          </div>
+
+          <div class="widget mt-4 pt-2">
+            <h5 class="widget-title">Projects :</h5>
+            <div class="progress-box mt-4">
+              <h6 class="title text-muted">Progress</h6>
+              <div class="progress">
+                <div class="progress-bar position-relative bg-primary" style="width:50%;">
+                  <div class="progress-value d-block text-muted h6">24 / 48</div>
+                </div>
+              </div>
+            </div>
+            <!--end process box-->
+          </div>
+
+          <div class="widget mt-4">
+            <ul class="list-unstyled sidebar-nav mb-0" id="navmenu-nav">
+              <li class="navbar-item account-menu px-0 active">
+                <a routerLink="/account-profile" class="navbar-link d-flex rounded shadow align-items-center py-2 px-4">
+                  <span class="h4 mb-0"><i class="uil uil-dashboard"></i></span>
+                  <h6 class="mb-0 ms-2">Profile</h6>
+                </a>
+              </li>
+
+              <li class="navbar-item account-menu px-0 mt-2">
+                <a routerLink="/account-members" class="navbar-link d-flex rounded shadow align-items-center py-2 px-4">
+                  <span class="h4 mb-0"><i class="uil uil-users-alt"></i></span>
+                  <h6 class="mb-0 ms-2">Members</h6>
+                </a>
+              </li>
+
+              <li class="navbar-item account-menu px-0 mt-2">
+                <a routerLink="/account-works" class="navbar-link d-flex rounded shadow align-items-center py-2 px-4">
+                  <span class="h4 mb-0"><i class="uil uil-file"></i></span>
+                  <h6 class="mb-0 ms-2">Portfolio</h6>
+                </a>
+              </li>
+
+              <li class="navbar-item account-menu px-0 mt-2">
+                <a routerLink="/account-messages"
+                  class="navbar-link d-flex rounded shadow align-items-center py-2 px-4">
+                  <span class="h4 mb-0"><i class="uil uil-envelope-star"></i></span>
+                  <h6 class="mb-0 ms-2">Messages</h6>
+                </a>
+              </li>
+
+              <li class="navbar-item account-menu px-0 mt-2">
+                <a routerLink="/account-payments"
+                  class="navbar-link d-flex rounded shadow align-items-center py-2 px-4">
+                  <span class="h4 mb-0"><i class="uil uil-transaction"></i></span>
+                  <h6 class="mb-0 ms-2">Payments</h6>
+                </a>
+              </li>
+
+              <li class="navbar-item account-menu px-0 mt-2">
+                <a routerLink="/account-setting" class="navbar-link d-flex rounded shadow align-items-center py-2 px-4">
+                  <span class="h4 mb-0"><i class="uil uil-setting"></i></span>
+                  <h6 class="mb-0 ms-2">Settings</h6>
+                </a>
+              </li>
+
+              <li class="navbar-item account-menu px-0 mt-2">
+                <a routerLink="/auth-login-three"
+                  class="navbar-link d-flex rounded shadow align-items-center py-2 px-4">
+                  <span class="h4 mb-0"><i class="uil uil-dashboard"></i></span>
+                  <h6 class="mb-0 ms-2">Logout</h6>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="widget mt-4 pt-2">
+            <h5 class="widget-title">Follow me :</h5>
+            <ul class="list-unstyled social-icon mb-0 mt-4">
+              <li class="list-inline-item"><a href="javascript:void(0)" class="rounded">
+              <!--     <i-feather name="facebook" class="fea icon-sm fea-social"></i-feather> -->
+                </a></li>
+              <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded">
+             <!--      <i-feather name="instagram" class="fea icon-sm fea-social"></i-feather> -->
+                </a></li>
+              <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded">
+                 <!--  <i-feather name="twitter" class="fea icon-sm fea-social"></i-feather> -->
+                </a></li>
+              <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded">
+                  <!-- <i-feather name="linkedin" class="fea icon-sm fea-social"></i-feather> -->
+                </a></li>
+              <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded">
+                <!--   <i-feather name="github" class="fea icon-sm fea-social"></i-feather> -->
+                </a></li>
+              <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded">
+               <!--    <i-feather name="youtube" class="fea icon-sm fea-social"></i-feather> -->
+                </a></li>
+              <li class="list-inline-item ms-1"><a href="javascript:void(0)" class="rounded">
+                 <!--  <i-feather name="gitlab" class="fea icon-sm fea-social"></i-feather> -->
+                </a></li>
+            </ul>
+            <!--end icon-->
+          </div>
+        </div>
+      </div>
+      <!--end col-->
+
+      <div class="col-lg-8 col-12">
+        <div class="border-bottom pb-4">
+          <h5>Krista Joseph</h5>
+          <p class="text-muted mb-0">I have started my career as a trainee and prove my self and achieve all the
+            milestone with good guidance and reach up to the project manager. In this journey, I understand all the
+            procedure which make me a good developer, team leader, and a project manager.</p>
+        </div>
+
+        <div class="border-bottom pb-4">
+          <div class="row">
+            <div class="col-md-6 mt-4">
+              <h5>Personal Details :</h5>
+              <div class="mt-4">
+                <div class="d-flex align-items-center">
+                <!--   <i-feather name="mail" class="fea icon-ex-md text-muted me-3"></i-feather> -->
+                  <div class="flex-1">
+                    <h6 class="text-primary mb-0">Email :</h6>
+                    <a href="javascript:void(0)" class="text-muted">kristajoseph0203@mail.com</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+             <!--      <i-feather name="bookmark" class="fea icon-ex-md text-muted me-3"></i-feather> -->
+                  <div class="flex-1">
+                    <h6 class="text-primary mb-0">Skills :</h6>
+                    <a href="javascript:void(0)" class="text-muted">html</a>, <a href="javascript:void(0)"
+                      class="text-muted">css</a>, <a href="javascript:void(0)" class="text-muted">js</a>, <a
+                      href="javascript:void(0)" class="text-muted">mysql</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+         <!--          <i-feather name="italic" class="fea icon-ex-md text-muted me-3"></i-feather> -->
+                  <div class="flex-1">
+                    <h6 class="text-primary mb-0">Language :</h6>
+                    <a href="javascript:void(0)" class="text-muted">English</a>, <a href="javascript:void(0)"
+                      class="text-muted">Japanese</a>, <a href="javascript:void(0)" class="text-muted">Chinese</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+             <!--      <i-feather name="globe" class="fea icon-ex-md text-muted me-3"></i-feather> -->
+                  <div class="flex-1">
+                    <h6 class="text-primary mb-0">Website :</h6>
+                    <a href="javascript:void(0)" class="text-muted">www.kristajoseph.com</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+          <!--         <i-feather name="gift" class="fea icon-ex-md text-muted me-3"></i-feather> -->
+                  <div class="flex-1">
+                    <h6 class="text-primary mb-0">Birthday :</h6>
+                    <p class="text-muted mb-0">2nd March, 1996</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                 <!--  <i-feather name="map-pin" class="fea icon-ex-md text-muted me-3"></i-feather> -->
+                  <div class="flex-1">
+                    <h6 class="text-primary mb-0">Location :</h6>
+                    <a href="javascript:void(0)" class="text-muted">Beijing, China</a>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+        <!--           <i-feather name="phone" class="fea icon-ex-md text-muted me-3"></i-feather> -->
+                  <div class="flex-1">
+                    <h6 class="text-primary mb-0">Cell No :</h6>
+                    <a href="javascript:void(0)" class="text-muted">(+12) 1254-56-4896</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+
+            <div class="col-md-6 mt-4 pt-2 pt-sm-0">
+              <h5>Experience :</h5>
+
+              <div class="d-flex key-feature align-items-center p-3 rounded shadow mt-4">
+                <img src="assets/images/job/Circleci.svg" class="avatar avatar-ex-sm" alt="" style="max-width:25px">
+                <div class="flex-1 content ms-3">
+                  <h4 class="title mb-0">Senior Web Developer</h4>
+                  <p class="text-muted mb-0">3 Years Experience</p>
+                  <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">CircleCi</a> @London, UK
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-flex key-feature align-items-center p-3 rounded shadow mt-4">
+                <img src="assets/images/job/Codepen.svg" class="avatar avatar-ex-sm" alt="" style="max-width:25px">
+                <div class="flex-1 content ms-3">
+                  <h4 class="title mb-0">Web Designer</h4>
+                  <p class="text-muted mb-0">2 Years Experience</p>
+                  <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Codepen</a> @Washington
+                    D.C, USA</p>
+                </div>
+              </div>
+
+              <div class="d-flex key-feature align-items-center p-3 rounded shadow mt-4">
+                <img src="assets/images/job/Gitlab.svg" class="avatar avatar-ex-sm" alt="" style="max-width:25px">
+                <div class="flex-1 content ms-3">
+                  <h4 class="title mb-0">UI Designer</h4>
+                  <p class="text-muted mb-0">2 Years Experience</p>
+                  <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Gitlab</a> @Perth,
+                    Australia</p>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div>
+
+        <h5 class="mt-4 mb-0">Posts & News :</h5>
+        <div class="row">
+          <div class="col-md-6 mt-4 pt-2">
+            <div class="card blog rounded border-0 shadow">
+              <div class="position-relative">
+                <img src="assets/images/blog/01.jpg" class="card-img-top rounded-top" alt="...">
+                <div class="overlay rounded-top bg-dark"></div>
+              </div>
+              <div class="card-body content">
+                <h5><a href="javascript:void(0)" class="card-title title text-dark">Design your apps in your own way</a>
+                </h5>
+                <div class="post-meta d-flex justify-content-between mt-3">
+                  <ul class="list-unstyled mb-0">
+                    <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i
+                          class="uil uil-heart me-1"></i>33</a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i
+                          class="uil uil-comment me-1"></i>08</a></li>
+                  </ul>
+                  <a routerLink="/page-blog-detail" class="text-muted readmore">Read More <i
+                      class="uil uil-angle-right-b align-middle"></i></a>
+                </div>
+              </div>
+              <div class="author">
+                <small class="text-light user d-block"><i class="uil uil-user"></i> Calvin Carlo</small>
+                <small class="text-light date"><i class="uil uil-calendar-alt"></i> 13th August, 2019</small>
+              </div>
+            </div>
+          </div>
+          <!--end col-->
+
+          <div class="col-md-6 mt-4 pt-2">
+            <div class="card blog rounded border-0 shadow">
+              <div class="position-relative">
+                <img src="assets/images/blog/02.jpg" class="card-img-top rounded-top" alt="...">
+                <div class="overlay rounded-top bg-dark"></div>
+              </div>
+              <div class="card-body content">
+                <h5><a href="javascript:void(0)" class="card-title title text-dark">How apps is changing the IT
+                    world</a></h5>
+                <div class="post-meta d-flex justify-content-between mt-3">
+                  <ul class="list-unstyled mb-0">
+                    <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i
+                          class="uil uil-heart me-1"></i>33</a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i
+                          class="uil uil-comment me-1"></i>08</a></li>
+                  </ul>
+                  <a routerLink="/page-blog-detail" class="text-muted readmore">Read More <i
+                      class="uil uil-angle-right-b align-middle"></i></a>
+                </div>
+              </div>
+              <div class="author">
+                <small class="text-light user d-block"><i class="uil uil-user"></i> Calvin Carlo</small>
+                <small class="text-light date"><i class="uil uil-calendar-alt"></i> 13th August, 2019</small>
+              </div>
+            </div>
+          </div>
+          <!--end col-->
+
+          <div class="col-12 mt-4 pt-2">
+            <a routerLink="/page-blog-grid" class="btn btn-primary">See More <i
+                class="uil uil-angle-right-b align-middle"></i></a>
+          </div>
+          <!--end col-->
+        </div>
+        <!--end row-->
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+  </div>
+  <!--end container-->
+</section>
+<!--end section-->
+<!-- Profile End -->
+
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-primary back-to-top" id="back-to-top" >
+ <!--  <i-feather name="arrow-up" class="icons"></i-feather> -->
+</a>
+<!-- Back to top -->
 </div>
+</ng-container>
