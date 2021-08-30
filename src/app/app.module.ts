@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
@@ -17,8 +17,13 @@ import { RouteProfileComponent } from './routes/profile/route-profile/route-prof
 import { WallComponent } from './components/wall/wall.component';
 import { LandingComponentRoute } from './routes/landing/landing.component';
 import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import  {DockModule } from 'primeng/dock';
+import { ChipModule } from 'primeng/chip';
+import {TableModule} from 'primeng/table';
+import {AvatarModule} from 'primeng/avatar';
+import {AvatarGroupModule} from 'primeng/avatargroup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +43,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    DockModule,
+    TableModule,
+    ChipModule,
+    AvatarModule,
+    AvatarGroupModule,
     IonicModule.forRoot()
   ],
   providers: [],
