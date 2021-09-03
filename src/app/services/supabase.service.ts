@@ -1,20 +1,16 @@
-import { Injectable, OnInit, Provider } from '@angular/core';
-import {AuthChangeEvent, createClient, PostgrestSingleResponse, Session, Subscription, SupabaseClient, User} from '@supabase/supabase-js';
+import { Injectable, OnInit } from '@angular/core';
+import {
+  AuthChangeEvent,
+  createClient,
+  PostgrestSingleResponse,
+  Session,
+  Subscription,
+  SupabaseClient,
+  User,
+} from '@supabase/supabase-js';
 import { environment } from 'src/environments/environment';
+import { Profile } from '../models/profile';
 
-export interface Profile {
-  username: string;
-  website: string;
-  avatar_url: string;
-}
-export interface ISession {
-  session: Session | null;
-  user: User | null;
-  provider?: Provider | undefined;
-  url?: string | null | undefined;
-  error: Error | null;
-  data: Session | null;
-}
 @Injectable({
   providedIn: 'root',
 })
@@ -40,7 +36,9 @@ export class SupabaseService implements OnInit {
       .eq('id', this.user?.id)
       .single();
   }
-  public authChanges(callback: (event: AuthChangeEvent, session: Session | null) => void): {
+  public authChanges(
+    callback: (event: AuthChangeEvent, session: Session | null) => void
+  ): {
     data: Subscription | null;
     error: Error | null;
   } {
@@ -49,7 +47,10 @@ export class SupabaseService implements OnInit {
   public signIn<T>(email: string): Promise<any> {
     return this.supabase.auth.signIn({ email });
   }
-  public signUpWithPhone(phone: any, password: any ='$Edssukds'): Promise<any> {
+  public signUpWithPhone(
+    phone: any,
+    password: any = '$Edssukds'
+  ): Promise<any> {
     return this.supabase.auth.signUp({
       phone: '+1' + phone,
       password: password,
@@ -65,7 +66,7 @@ export class SupabaseService implements OnInit {
       updated_at: new Date(),
     };
     return this.supabase.from('profiles').upsert(update, {
-      returning: 'minimal', 
+      returning: 'minimal',
     });
   }
   public downLoadImage(path: string) {
