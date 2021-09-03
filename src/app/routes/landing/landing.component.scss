@@ -415,6 +415,17 @@ header .toggle img {
     .header-right {
       float: none;
     }
+
+    .sci {
+      position: absolute;
+      top: 400px;
+      transform: translateY(-50%);
+   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
   }
 
   .header .active {
