@@ -24,6 +24,12 @@ import { ChipModule } from 'primeng/chip';
 import {TableModule} from 'primeng/table';
 import {AvatarModule} from 'primeng/avatar';
 import {AvatarGroupModule} from 'primeng/avatargroup';
+import {DialogModule} from 'primeng/dialog';
+import {ButtonModule} from 'primeng/button';
+
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,9 +58,12 @@ import {AvatarGroupModule} from 'primeng/avatargroup';
     ChipModule,
     AvatarModule,
     AvatarGroupModule,
+    DialogModule,
+    ButtonModule,
+    ConfirmDialogModule,
     IonicModule.forRoot()
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
