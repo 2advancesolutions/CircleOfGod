@@ -30,6 +30,9 @@ import {BlockUIModule} from 'primeng/blockui';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
+import {MenubarModule} from 'primeng/menubar';
+import {BadgeModule} from 'primeng/badge';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +67,8 @@ import { DropdownModule } from 'primeng/dropdown';
     ConfirmDialogModule,
     DropdownModule,
     BlockUIModule,
+    MenubarModule,
+    BadgeModule,
     IonicModule.forRoot()
   ],
   providers: [ConfirmationService],

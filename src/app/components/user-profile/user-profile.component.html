@@ -1,5 +1,20 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <!--   <img src="../../../assets/images/icon/location.svg" height="40" class="p-mr-2"> -->
+    </ng-template>
+    <ng-template pTemplate="end">
+	
+		<i class="pi pi-bell p-mr-4 p-text-secondary" pBadge style="font-size: 1.3rem" value="2"></i>
+<i class="pi pi-calendar p-mr-4 p-text-secondary" pBadge style="font-size: 1.3rem" [value]="'10+'" severity="danger"></i>
+<i class="pi pi-envelope p-text-secondary" pBadge style="font-size: 1.3rem" severity="danger"></i>
+		
+        <input type="text" pInputText placeholder="Search">
+    </ng-template>
+</p-menubar>
+
+
 <div class="container">
-	<div class="innerwrap">
+	<div class="">
 		<section class="section1 clearfix">
 			<div>
 				<div class="row grid clearfix">
@@ -18,7 +33,7 @@
 							<div class="col3"><h1>452</h1>
 							<span>Likes</span></div>
 							<div class="col3 last"><h1>1207</h1>
-							<span>Bookmarks</span></div>
+							<span>Lives</span></div>
 						</div>
 					</div>
 				</div>
