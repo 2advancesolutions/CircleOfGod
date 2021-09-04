@@ -26,7 +26,7 @@ import {AvatarModule} from 'primeng/avatar';
 import {AvatarGroupModule} from 'primeng/avatargroup';
 import {DialogModule} from 'primeng/dialog';
 import {ButtonModule} from 'primeng/button';
-
+import {BlockUIModule} from 'primeng/blockui';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
@@ -63,6 +63,7 @@ import { DropdownModule } from 'primeng/dropdown';
     ButtonModule,
     ConfirmDialogModule,
     DropdownModule,
+    BlockUIModule,
     IonicModule.forRoot()
   ],
   providers: [ConfirmationService],
