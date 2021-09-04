@@ -105,13 +105,13 @@ header .toggle img {
 
 .sci {
   position: absolute;
-  top: 50%;
+  top: 100%;
   transform: translateY(-50%);
   right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .sci li {
@@ -414,6 +414,17 @@ header .toggle img {
 
     .header-right {
       float: none;
+    }
+
+    .sci {
+      position: absolute;
+      top: 400px;
+      transform: translateY(-50%);
+   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
     }
   }
 
