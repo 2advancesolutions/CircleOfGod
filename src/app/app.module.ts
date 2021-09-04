@@ -29,6 +29,7 @@ import {ButtonModule} from 'primeng/button';
 
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import {ConfirmationService} from 'primeng/api';
     DialogModule,
     ButtonModule,
     ConfirmDialogModule,
+    DropdownModule,
     IonicModule.forRoot()
   ],
   providers: [ConfirmationService],
