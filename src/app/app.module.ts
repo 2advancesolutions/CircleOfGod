@@ -32,7 +32,8 @@ import {ConfirmationService} from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
 import {MenubarModule} from 'primeng/menubar';
 import {BadgeModule} from 'primeng/badge';
-
+import {CardModule} from 'primeng/card';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,8 @@ import {BadgeModule} from 'primeng/badge';
     BlockUIModule,
     MenubarModule,
     BadgeModule,
+    CardModule,
+    OverlayPanelModule,
     IonicModule.forRoot()
   ],
   providers: [ConfirmationService],

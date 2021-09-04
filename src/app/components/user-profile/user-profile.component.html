@@ -4,12 +4,19 @@
     </ng-template>
     <ng-template pTemplate="end">
 	
-		<i class="pi pi-bell p-mr-4 p-text-secondary" pBadge style="font-size: 1.3rem" value="2"></i>
-<i class="pi pi-calendar p-mr-4 p-text-secondary" pBadge style="font-size: 1.3rem" [value]="'10+'" severity="danger"></i>
-<i class="pi pi-envelope p-text-secondary" pBadge style="font-size: 1.3rem" severity="danger"></i>
-		
+		<i class="pi pi-bell p-mr-4 p-text-secondary" pBadge style="font-size: 1.3rem" value="2" (click)="op.toggle($event)"></i>
+<i class="pi pi-calendar p-mr-4 p-text-secondary" pBadge style="font-size: 1.3rem" [value]="'10+'" severity="danger" (click)="op.toggle($event)"></i>
+<i class="pi pi-envelope p-text-secondary" pBadge style="font-size: 1.3rem" severity="danger" (click)="op.toggle($event)"></i>
+
+
         <input type="text" pInputText placeholder="Search">
+		<p-overlayPanel #op>
+			<ng-template pTemplate>
+				Content
+			</ng-template>
+		</p-overlayPanel>
     </ng-template>
+	
 </p-menubar>
 
 
