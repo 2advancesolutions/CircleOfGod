@@ -18,6 +18,7 @@ export class RouteSignUpComponent implements OnInit {
   public userPassword: any | null;
   public display: boolean = false;
   public selectedCity: any | null;
+  public showSetupCompletedModal: boolean = false;
   public cities: any[] =  [
     {name: 'Choose One...', code: 'null'},
     {name: 'Buddhists', code: 'BU'},
@@ -48,5 +49,9 @@ export class RouteSignUpComponent implements OnInit {
   }
   public showDialog() {
     this.display = true;
+  }
+  public showCompleteModal(){
+    this.display = false;
+    this.showSetupCompletedModal = true;
   }
 }
