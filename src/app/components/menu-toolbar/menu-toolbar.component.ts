@@ -12,93 +12,30 @@ export class MenuToolbarComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'File',
-        icon: 'pi pi-fw pi-file',
+        label: 'My Account',
+        icon: 'pi pi-fw pi-user',
         items: [
           {
-            label: 'New',
-            icon: 'pi pi-fw pi-plus',
-            items: [
-              {
-                label: 'Bookmark',
-                icon: 'pi pi-fw pi-bookmark',
-              },
-              {
-                label: 'Video',
-                icon: 'pi pi-fw pi-video',
-              },
-            ],
+            label: 'Edit Profile',
+            icon: 'pi pi-fw pi-user',
           },
           {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash',
+            label: 'Privacy',
+            icon: 'pi pi-fw pi-eye',
           },
           {
             separator: true,
           },
           {
-            label: 'Payments Settings',
+            label: 'Payments',
             icon: 'pi pi-fw pi-credit-card',
           },
           {
-            label: 'All Settings',
-            icon: 'pi pi-fw pi-cog',
-          },
-        ],
-      },
-      {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-          {
-            label: 'Left',
-            icon: 'pi pi-fw pi-align-left',
+            label: 'Subscriptons',
+            icon: 'pi pi-fw pi-link',
           },
           {
-            label: 'Right',
-            icon: 'pi pi-fw pi-align-right',
-          },
-          {
-            label: 'Center',
-            icon: 'pi pi-fw pi-align-center',
-          },
-          {
-            label: 'Justify',
-            icon: 'pi pi-fw pi-align-justify',
-          },
-        ],
-      },
-      {
-        label: 'Users',
-        icon: 'pi pi-fw pi-user',
-        items: [
-          {
-            label: 'New',
-            icon: 'pi pi-fw pi-user-plus',
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-user-minus',
-          },
-          {
-            label: 'Search',
-            icon: 'pi pi-fw pi-users',
-            items: [
-              {
-                label: 'Filter',
-                icon: 'pi pi-fw pi-filter',
-                items: [
-                  {
-                    label: 'Print',
-                    icon: 'pi pi-fw pi-print',
-                  },
-                ],
-              },
-              {
-                icon: 'pi pi-fw pi-bars',
-                label: 'List',
-              },
-            ],
+            label: 'Logout',
           },
         ],
       },
@@ -107,15 +44,15 @@ export class MenuToolbarComponent implements OnInit {
         icon: 'pi pi-fw pi-calendar',
         items: [
           {
-            label: 'Edit',
+            label: 'Post',
             icon: 'pi pi-fw pi-pencil',
             items: [
               {
-                label: 'Save',
+                label: 'Add New Event',
                 icon: 'pi pi-fw pi-calendar-plus',
               },
               {
-                label: 'Delete',
+                label: 'Delete Event',
                 icon: 'pi pi-fw pi-calendar-minus',
               },
             ],
@@ -139,6 +76,32 @@ export class MenuToolbarComponent implements OnInit {
       {
         label: 'Promote Ad',
         icon: 'pi pi-fw pi-desktop',
+        items: [
+          {
+            label: 'Options',
+            icon: 'pi pi-fw pi-pencil',
+            items: [
+              {
+                label: 'Post New Live Ad',
+                icon: 'pi pi-fw pi-calendar-plus',
+              },
+              {
+                label: 'Post New Wall Ad',
+                icon: 'pi pi-fw pi-calendar-minus',
+              },
+            ],
+          },
+          {
+            label: 'Archieve',
+            icon: 'pi pi-fw pi-calendar-times',
+            items: [
+              {
+                label: 'Post',
+                icon: 'pi pi-fw pi-calendar-minus',
+              },
+            ],
+          },
+        ],
       }, 
       
       {

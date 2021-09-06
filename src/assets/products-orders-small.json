@@ -11,7 +11,7 @@
 			"quantity": 24,
 			"inventoryStatus": "3,434",
             "rating": 5,
-             "orderStatus" : "Book Now",
+             "orderStatus" : "Open",
             "orders": [
                 {
                     "id": "1000",
@@ -129,7 +129,7 @@
 			"inventoryStatus": "5,554",
             "rating": 5,
             "orders": [],
-            "orderStatus" : "Book Now"
+            "orderStatus" : "Open"
 		},
 		{
 			"id": "1004",
@@ -142,7 +142,7 @@
 			"quantity": 73,
 			"inventoryStatus": "2,432",
             "rating": 4,
-            "orderStatus" : "Book Now",
+            "orderStatus" : "Open",
             "orders": [
                 {
                     "id": "5000",
@@ -217,7 +217,7 @@
 			"quantity": 5,
 			"inventoryStatus": "43",
             "rating": 3,
-            "orderStatus" : "Book Now",
+            "orderStatus" : "Open",
             "orders": [
                 {
                     "id": "7000",
@@ -250,7 +250,7 @@
 			"quantity": 23,
 			"inventoryStatus": "8,432",
             "rating": 5,
-            "orderStatus" : "Book Now",
+            "orderStatus" : "Open",
             "orders": [
                 {
                     "id": "8000",
@@ -274,7 +274,7 @@
 			"quantity": 2,
 			"inventoryStatus": "433",
             "rating": 4,
-            "orderStatus" : "Book Now",
+            "orderStatus" : "Open",
             "orders": [
                 {
                     "id": "9000",
@@ -307,7 +307,7 @@
 			"quantity": 63,
 			"inventoryStatus": "54",
             "rating": 3,
-            "orderStatus" : "Book Now",
+            "orderStatus" : "Open",
             "orders": [
                 {
                     "id": "10000",
