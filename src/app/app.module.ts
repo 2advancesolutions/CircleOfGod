@@ -55,6 +55,7 @@ import { AdsAdminComponent } from './components/ads-admin/ads-admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import {TabViewModule} from 'primeng/tabview';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
+import { AccountComponent } from './components/account/account.component';
 
 
 
@@ -77,7 +78,8 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     MenuToolbarComponent,
     RouteAdsComponent,
     AdsAdminComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
