@@ -1,29 +1,57 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ConfirmationService } from 'primeng/api';
 import { SupabaseService } from 'src/app/services/supabase.service';
 
 @Component({
   selector: 'app-route-sign-up',
   templateUrl: './route-sign-up.component.html',
-  styleUrls: ['./route-sign-up.component.scss']
+  styleUrls: ['./route-sign-up.component.scss'],
 })
 export class RouteSignUpComponent implements OnInit {
-  constructor(private readonly supabase: SupabaseService, private fb: FormBuilder, private router: Router) { }
+  
+  constructor(private readonly supabase: SupabaseService) { }
+  
   public loading: boolean = false;
   public userPhone: any | null;
-  public userPassword: any | null;;
+  public userPassword: any | null;
+  public display: boolean = false;
+  public selectedCity: any | null;
+  public showSetupCompletedModal: boolean = false;
+  public cities: any[] =  [
+    {name: 'Choose One...', code: 'null'},
+    {name: 'Buddhists', code: 'BU'},
+    {name: 'Christian', code: 'CHR'},
+    {name: 'Ethnic and indigenous', code: 'EI'},
+    {name: 'Hindu', code: 'HD'},
+    {name: 'Jainism', code: 'JA'},
+    {name: 'Judaism', code: 'JU'},
+    {name: 'Muslim', code: 'MU'},
+    {name: 'Nondenomination', code: 'ND'},
+    {name: 'Sikhism', code: 'SK'},
+    {name: 'Spiritism', code: 'SP'},
+    {name: 'Sikhism', code: 'SK'},
+    {name: 'Taoists/Confucianists/Chinese traditional religionists', code: 'SK'},
+    {name: 'Other', code: 'OT'},
+];
   ngOnInit() {}
   public async signUp(): Promise<void> {
     try {
       this.loading = true;
       await this.supabase.signUpWithPhone(this.userPhone, this.userPassword);
-      alert('sending verfication code to you phone please enter');
-      this.router.navigateByUrl('/profile');
-    } catch (error) {
-      alert(error.error_description || error.message)
+      this.showDialog();
+    } catch (error: any) {
+      alert(error.error_description || error.message);
     } finally {
       this.loading = false;
     }
+  }
+  public showDialog() {
+    this.display = true;
+  }
+  public showCompleteModal(){
+    this.display = false;
+    this.showSetupCompletedModal = true;
   }
 }

@@ -19,11 +19,15 @@ import { LandingComponentRoute } from './routes/landing/landing.component';
 import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import  {DockModule } from 'primeng/dock';
-import { ChipModule } from 'primeng/chip';
-import {TableModule} from 'primeng/table';
-import {AvatarModule} from 'primeng/avatar';
-import {AvatarGroupModule} from 'primeng/avatargroup';
+import {ConfirmationService} from 'primeng/api';
+import { MenuToolbarComponent } from './components/menu-toolbar/menu-toolbar.component';
+import { RouteAdsComponent } from './routes/route-ads/route-ads.component';
+import { AdsAdminComponent } from './components/ads-admin/ads-admin.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
+import { AccountComponent } from './components/account/account.component';
+import { VendorsModule } from './modules/vendors/vendors.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,22 +43,24 @@ import {AvatarGroupModule} from 'primeng/avatargroup';
     RouteProfileComponent,
     WallComponent,
     LandingComponentRoute,
-    RouteSignUpComponent
+    RouteSignUpComponent,
+    MenuToolbarComponent,
+    RouteAdsComponent,
+    AdsAdminComponent,
+    DashboardCardComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DockModule,
-    TableModule,
-    ChipModule,
-    AvatarModule,
-    AvatarGroupModule,
+    VendorsModule,
     IonicModule.forRoot()
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

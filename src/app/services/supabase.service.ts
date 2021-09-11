@@ -9,7 +9,7 @@ import {
   User,
 } from '@supabase/supabase-js';
 import { environment } from 'src/environments/environment';
-import { Profile } from '../models/profile';
+import { Profile } from '../modals/profile';
 
 @Injectable({
   providedIn: 'root',
