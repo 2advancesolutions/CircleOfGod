@@ -12,92 +12,34 @@ export class MenuToolbarComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'My Account',
-        icon: 'pi pi-fw pi-user',
+        label: 'Post New Ad',
+        icon: 'pi pi-fw pi-image',
         items: [
           {
-            label: 'Edit Profile',
-            icon: 'pi pi-fw pi-user',
-          },
-          {
-            label: 'Privacy',
-            icon: 'pi pi-fw pi-eye',
-          },
-          {
-            separator: true,
-          },
-          {
-            label: 'Payments',
-            icon: 'pi pi-fw pi-credit-card',
-          },
-          {
-            label: 'Subscriptons',
-            icon: 'pi pi-fw pi-link',
-          },
-          {
-            label: 'Logout',
-          },
-        ],
-      },
-      {
-        label: 'Events',
-        icon: 'pi pi-fw pi-calendar',
-        items: [
-          {
-            label: 'Post',
-            icon: 'pi pi-fw pi-pencil',
+            label: 'Live Ad',
+            icon: 'pi pi-fw pi-video',
             items: [
               {
-                label: 'Add New Event',
-                icon: 'pi pi-fw pi-calendar-plus',
+                label: 'Post New Ad',
+                icon: 'pi pi-plus',
               },
               {
-                label: 'Delete Event',
-                icon: 'pi pi-fw pi-calendar-minus',
+                label: 'Delete Ad',
+                icon: 'pi pi-minus',
               },
             ],
           },
           {
-            label: 'Archieve',
+            label: 'Wall Ad',
             icon: 'pi pi-fw pi-calendar-times',
             items: [
               {
-                label: 'Remove',
-                icon: 'pi pi-fw pi-calendar-minus',
-              },
-            ],
-          },
-        ],
-      },
-     /*  {
-        label: 'Reports',
-        icon: 'pi pi-fw pi-chart-bar',
-      }, */
-      {
-        label: 'Promote Ad',
-        icon: 'pi pi-fw pi-desktop',
-        items: [
-          {
-            label: 'Options',
-            icon: 'pi pi-fw pi-pencil',
-            items: [
-              {
-                label: 'Post New Live Ad',
-                icon: 'pi pi-fw pi-calendar-plus',
+                label: 'Post New Add',
+                icon: 'pi pi pi-plus',
               },
               {
-                label: 'Post New Wall Ad',
-                icon: 'pi pi-fw pi-calendar-minus',
-              },
-            ],
-          },
-          {
-            label: 'Archieve',
-            icon: 'pi pi-fw pi-calendar-times',
-            items: [
-              {
-                label: 'Post',
-                icon: 'pi pi-fw pi-calendar-minus',
+                label: 'Delete Ad',
+                icon: 'pi pi-minus',
               },
             ],
           },
