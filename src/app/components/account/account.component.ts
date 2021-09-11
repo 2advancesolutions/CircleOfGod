@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Session } from '@supabase/supabase-js';
-import { Profile } from 'src/app/models/profile';
+import { Profile } from 'src/app/modals/profile';
 import { SupabaseService } from 'src/app/services/supabase.service';
 
 @Component({

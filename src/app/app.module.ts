@@ -56,6 +56,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {TabViewModule} from 'primeng/tabview';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { AccountComponent } from './components/account/account.component';
+import { VendorsModule } from './modules/vendors/vendors.module';
 
 
 
@@ -88,31 +89,7 @@ import { AccountComponent } from './components/account/account.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DockModule,
-    TableModule,
-    ChipModule,
-    AvatarModule,
-    AvatarGroupModule,
-    DialogModule,
-    ButtonModule,
-    ConfirmDialogModule,
-    DropdownModule,
-    BlockUIModule,
-    MenubarModule,
-    BadgeModule,
-    CardModule,
-    OverlayPanelModule,
-    ToastModule,
-    CalendarModule,
-    SliderModule,
-    MultiSelectModule,
-    ContextMenuModule,
-    ProgressBarModule,
-    InputTextModule,
-    RatingModule,
-    CarouselModule,
-    SidebarModule,
-    TabViewModule,
+    VendorsModule,
     IonicModule.forRoot()
   ],
   providers: [ConfirmationService],
