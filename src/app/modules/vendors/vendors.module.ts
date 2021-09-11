@@ -26,7 +26,7 @@ import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {SplitterModule} from 'primeng/splitter';
 @NgModule({
   declarations: [],
   imports: [
@@ -58,8 +58,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CarouselModule,
     SidebarModule,
     TabViewModule,
+    SplitterModule
   ],
-  exports: [CommonModule,
+  exports: [
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     DockModule,
@@ -86,6 +88,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RatingModule,
     CarouselModule,
     SidebarModule,
-    TabViewModule]
+    TabViewModule,
+    SplitterModule
+  ]
 })
 export class VendorsModule { }

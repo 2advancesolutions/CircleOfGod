@@ -25,6 +25,7 @@ export class AdsAdminComponent implements OnInit {
   public display:  boolean = false;
   public userSubscription: boolean = false;
   public products: Product[] = [];
+  public shoppingCart: Array<any> = [];
   public responsiveOptions = [
     {
       breakpoint: '1024px',
@@ -44,6 +45,12 @@ export class AdsAdminComponent implements OnInit {
   ];
   ngOnInit(): void {
     this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
+  }
+
+  public addToCart(user: any) {
+  console.log(user);
+  this.display = true;
+  this.shoppingCart.push(user);
   }
 
 }

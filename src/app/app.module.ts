@@ -19,46 +19,14 @@ import { LandingComponentRoute } from './routes/landing/landing.component';
 import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import  {DockModule } from 'primeng/dock';
-import { ChipModule } from 'primeng/chip';
-import {TableModule} from 'primeng/table';
-import {AvatarModule} from 'primeng/avatar';
-import {AvatarGroupModule} from 'primeng/avatargroup';
-import {DialogModule} from 'primeng/dialog';
-import {ButtonModule} from 'primeng/button';
-import {BlockUIModule} from 'primeng/blockui';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
-import { DropdownModule } from 'primeng/dropdown';
-import {MenubarModule} from 'primeng/menubar';
-import {BadgeModule} from 'primeng/badge';
-import {CardModule} from 'primeng/card';
-import {OverlayPanelModule} from 'primeng/overlaypanel';
-
-
-
-import {ToastModule} from 'primeng/toast';
-import {CalendarModule} from 'primeng/calendar';
-import {SliderModule} from 'primeng/slider';
-import {MultiSelectModule} from 'primeng/multiselect';
-import {ContextMenuModule} from 'primeng/contextmenu';
-
-import {ProgressBarModule} from 'primeng/progressbar';
-import {InputTextModule} from 'primeng/inputtext';
-import {RatingModule} from 'primeng/rating';
-
-import {CarouselModule} from 'primeng/carousel';
-import { SidebarModule } from 'primeng/sidebar';
 import { MenuToolbarComponent } from './components/menu-toolbar/menu-toolbar.component';
 import { RouteAdsComponent } from './routes/route-ads/route-ads.component';
 import { AdsAdminComponent } from './components/ads-admin/ads-admin.component';
 import { HttpClientModule } from '@angular/common/http';
-import {TabViewModule} from 'primeng/tabview';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { AccountComponent } from './components/account/account.component';
 import { VendorsModule } from './modules/vendors/vendors.module';
-
-
 
 @NgModule({
   declarations: [

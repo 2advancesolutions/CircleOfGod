@@ -2,7 +2,12 @@
     Content
 </p-dialog>
 <p-sidebar [(visible)]="display" position="right">
-    Content
+   
+    <div *ngFor="let p of shoppingCart">
+  {{p.name}}
+  {{p.price}}
+    </div>
+
 </p-sidebar>
 <app-menu-toolbar></app-menu-toolbar>
      <div class="container">
@@ -10,6 +15,7 @@
     </div>
  <div class="container">
      <h1>Book Ads Now</h1>
+     
  <p-tabView>
     <p-tabPanel header="All">
         <p-table [value]="products" dataKey="name">
@@ -36,7 +42,15 @@
                     <td><p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating></td>
                     <td><span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span></td>
                     <td>
-                        <a [ngClass]="{'btn-success':product.orderStatus === 'Open', 'btn-danger':product.orderStatus === 'Sold Out'}">{{product.orderStatus}}</a></td>
+                        <button class="btn"[ngClass]="{'btn-success': product.orderStatus === 'Book', 'btn-danger':product.orderStatus === 'Sold Out'}" 
+                         (mouseover)="status.toggle($event)" (mouseout)="status.toggle($event)" (click)="addToCart(product)" [disabled]="product.orderStatus === 'Sold Out'">
+                            {{product.orderStatus}}</button>
+                            <p-overlayPanel #status>
+                                <ng-template pTemplate>
+                                  {{product.orderStatus === 'Sold Out' ? 'Sorry sold out' : 'open slots available'}}
+                                </ng-template>
+                              </p-overlayPanel>
+                        </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="rowexpansion" let-product>
@@ -58,10 +72,10 @@
                                     <tr>
                                         <td>{{order.id}}</td>
                                         <td>{{order.customer}}</td>
-                                        <td>{{order.id}}</td>
+                                        <td>{{order.date}}</td>
                                         <td>{{order.amount | currency:'USD'}}</td>
                                         <td><span [class]="'order-badge order-' + order.status.toLowerCase()">{{order.status}}</span></td>
-                                        <td><p-button type="button" icon="pi pi-search"></p-button></td>
+                                        <td></td>
                                     </tr>
                                 </ng-template>
                                 <ng-template pTemplate="emptymessage">
