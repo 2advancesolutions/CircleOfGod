@@ -21,7 +21,7 @@ import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ConfirmationService} from 'primeng/api';
 import { MenuToolbarComponent } from './components/menu-toolbar/menu-toolbar.component';
-import { RouteAdsComponent } from './routes/route-ads/route-ads.component';
+import { MainLayoutComponent } from './routes/main/main.component';
 import { AdsAdminComponent } from './components/ads-admin/ads-admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
@@ -45,7 +45,7 @@ import { VendorsModule } from './modules/vendors/vendors.module';
     LandingComponentRoute,
     RouteSignUpComponent,
     MenuToolbarComponent,
-    RouteAdsComponent,
+    MainLayoutComponent,
     AdsAdminComponent,
     DashboardCardComponent,
     AccountComponent

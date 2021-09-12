@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponentRoute as RouteLandingComponent } from './routes/landing/landing.component';
 import { RouteLoginComponent } from './routes/login/route-login/route-login.component';
 import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
-import { RouteAdsComponent } from './routes/route-ads/route-ads.component';
+import { MainLayoutComponent } from './routes/main/main.component';
 import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'home', component: RouteLandingComponent },
   { path: 'login', component: RouteLoginComponent },
   { path: 'signup', component: RouteSignUpComponent },
-  { path: 'ads', component: RouteAdsComponent },
+  { path: 'main', component: MainLayoutComponent },
   { path: 'profile', component: RouteProfileComponent }
 ];
 

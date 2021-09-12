@@ -2,9 +2,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-route-ads',
-  templateUrl: './route-ads.component.html',
-  styleUrls: ['./route-ads.component.scss'],
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
   animations: [
     trigger('rowExpansionTrigger', [
       state(
@@ -25,7 +25,7 @@ import { Component, OnInit } from '@angular/core';
     ]),
   ],
 })
-export class RouteAdsComponent implements OnInit {
+export class MainLayoutComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
 }

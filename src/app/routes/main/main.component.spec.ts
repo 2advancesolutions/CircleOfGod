@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RouteAdsComponent } from './route-ads.component';
+import { RouteAdsComponent } from './main.component';
 
 describe('RouteAdsComponent', () => {
   let component: RouteAdsComponent;
