@@ -17,16 +17,16 @@ import { RouteProfileComponent } from './routes/profile/route-profile/route-prof
 import { WallComponent } from './components/wall/wall.component';
 import { LandingComponentRoute } from './routes/landing/landing.component';
 import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ConfirmationService} from 'primeng/api';
 import { MenuToolbarComponent } from './components/menu-toolbar/menu-toolbar.component';
 import { MainLayoutComponent } from './routes/main/main.component';
-import { AdsAdminComponent } from './components/ads-admin/ads-admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { AccountComponent } from './components/account/account.component';
 import { VendorsModule } from './modules/vendors/vendors.module';
+import { LayoutComponent } from './routes/layout/layout.component';
+
 
 @NgModule({
   declarations: [
@@ -46,9 +46,9 @@ import { VendorsModule } from './modules/vendors/vendors.module';
     RouteSignUpComponent,
     MenuToolbarComponent,
     MainLayoutComponent,
-    AdsAdminComponent,
     DashboardCardComponent,
-    AccountComponent
+    AccountComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
