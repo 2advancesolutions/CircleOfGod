@@ -53,10 +53,9 @@ body.light-mode:before {
 
 .app {
  background-color: rgb(255, 255, 255);;
- height: 90vh;
  display: flex;
  flex-direction: column;
- overflow: hidden;
+ overflow: scroll;
  width: 100%;
 
  backdrop-filter: blur(20px);

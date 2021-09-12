@@ -20,7 +20,7 @@ export class RouteLoginComponent implements OnInit {
       this.loading = true;
       await this.supabase.signIn(input);
       alert('Check your email for the login link!');
-    } catch (error) {
+    } catch (error: any) {
       alert(error.error_description || error.message)
     } finally {
       this.loading = false;
