@@ -45,12 +45,12 @@
         </div>
           <div class="col-md-12 mt-2 pb-4">
               <div class="d-grid">
-                  <button class="btn btn-primary" (click)="signUp()" [routerLink]="'/profile'">Submit</button>
+                  <button class="btn btn-primary" type="submit">Submit</button>
               </div>
           </div>
           <div class="col-md-12 mt-2 pb-4">
             <div class="d-grid">
-                <button class="btn btn-success" style="color: #fff" (click)="signUp()" [routerLink]="'/profile'">Find A Church To Join</button>
+                <button class="btn btn-success" style="color: #fff"  [routerLink]="'/profile'">Find A Church To Join</button>
             </div>
         </div>
       </div>
@@ -73,7 +73,7 @@
                 <div class="card shadow rounded border-0">
                     <div class="card-body">
                         <h4 class="card-title text-center">Signup</h4>
-                        <form class="login-form mt-4">
+                        <form class="login-form mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
@@ -81,7 +81,10 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="form-icon position-relative">
-                                            <input type="text" class="form-control ps-5" placeholder="First Name" name="s" required="">
+                                            <input type="text" class="form-control ps-5" type="text" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" placeholder="First Name">
+                                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.firstName.errors.required">Required</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +94,10 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="form-icon position-relative">
-                                            <input type="text" class="form-control ps-5" placeholder="Last Name" name="s" required="">
+                                            <input type="text" class="form-control ps-5" placeholder="Last Name" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+                                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.lastName.errors.required">Required</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +133,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="d-grid">
-                                        <button class="btn btn-primary" (click)="signUp()">Register</button>
+                                        <button class="btn btn-primary" type="submit">Register</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 mt-4 text-center">
