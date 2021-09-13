@@ -76,6 +76,21 @@ export class RouteSignUpComponent implements OnInit {
   public showDialog() {
     this.display = true;
   }
+
+  public async verfiyPina(phone: any, token: any){
+    try {
+      this.loading = true;
+      await this.supabase.verifyPin(phone, token);
+      this.showDialog();
+    } catch (error: any) {
+      alert(error.error_description || error.message);
+    } finally {
+      this.loading = false;
+    }
+
+  }
+
+
   public showCompleteModal() {
     this.display = false;
     this.showSetupCompletedModal = true;
