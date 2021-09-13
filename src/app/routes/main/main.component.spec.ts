@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdsAdminComponent } from './ads-admin.component';
+import { RouteAdsComponent } from './main.component';
 
-describe('AdsAdminComponent', () => {
-  let component: AdsAdminComponent;
-  let fixture: ComponentFixture<AdsAdminComponent>;
+describe('RouteAdsComponent', () => {
+  let component: RouteAdsComponent;
+  let fixture: ComponentFixture<RouteAdsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdsAdminComponent ]
+      declarations: [ RouteAdsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdsAdminComponent);
+    fixture = TestBed.createComponent(RouteAdsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -56,7 +56,17 @@ export class SupabaseService implements OnInit {
       password: password,
     });
   }
-  public signOut() {
+  
+  public verifyPin(phone: any, token: any): Promise<any>  {
+    return this.supabase.auth.verifyOTP({
+      phone: '+1' + phone,
+      token: token,
+    });
+  }
+
+  public signOut(): Promise<{
+    error: Error | null;
+  }> {
     return this.supabase.auth.signOut();
   }
   public updateProfile(profile: Profile) {
@@ -69,11 +79,22 @@ export class SupabaseService implements OnInit {
       returning: 'minimal',
     });
   }
-  public downLoadImage(path: string) {
+  public downLoadImage(path: string): Promise<{
+    data: Blob | null;
+    error: Error | null;
+  }> {
     return this.supabase.storage.from('avatars').download(path);
   }
 
-  public uploadAvatar(filePath: string, file: File) {
+  public uploadAvatar(
+    filePath: string,
+    file: File
+  ): Promise<{
+    data: {
+      Key: string;
+    } | null;
+    error: Error | null;
+  }> {
     return this.supabase.storage.from('avatars').upload(filePath, file);
   }
 }

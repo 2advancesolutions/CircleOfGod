@@ -53,7 +53,7 @@ export class ProductService {
     'Yoga Mat',
     'Yoga Set',
   ];
-  getProductsSmall() {
+  public getProductsSmall() {
     return this.http
       .get<any>('assets/products-small.json')
       .toPromise()
@@ -63,7 +63,7 @@ export class ProductService {
       });
   }
 
-  getProducts() {
+  public getProducts() {
     return this.http
       .get<any>('assets/products.json')
       .toPromise()
@@ -73,7 +73,7 @@ export class ProductService {
       });
   }
 
-  getProductsWithOrdersSmall() {
+  public getProductsWithOrdersSmall(): Promise<Product[]> {
     return this.http
       .get<any>('assets/products-orders-small.json')
       .toPromise()
@@ -83,7 +83,7 @@ export class ProductService {
       });
   }
 
-  generatePrduct(): Product {
+  public generatePrduct(): Product {
     const product: any = {
       id: this.generateId(),
       name: this.generateName(),
@@ -94,39 +94,38 @@ export class ProductService {
       inventoryStatus: this.generateStatus(),
       rating: this.generateRating(),
     };
-    product.image = product.name.toLocaleLowerCase().split(/[ ,]+/).join('-') + '.jpg';
+    product.image =
+      product.name.toLocaleLowerCase().split(/[ ,]+/).join('-') + '.jpg';
     return product;
   }
 
-  generateId() {
+  public generateId(): string {
     let text = '';
     let possible =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
     for (var i = 0; i < 5; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
-
     return text;
   }
 
-  generateName() {
+  public generateName(): string {
     return this.productNames[Math.floor(Math.random() * Math.floor(30))];
   }
 
-  generatePrice() {
+  public generatePrice(): number {
     return Math.floor(Math.random() * Math.floor(299) + 1);
   }
 
-  generateQuantity() {
+  public generateQuantity(): number {
     return Math.floor(Math.random() * Math.floor(75) + 1);
   }
 
-  generateStatus() {
+  public generateStatus(): string {
     return this.status[Math.floor(Math.random() * Math.floor(3))];
   }
 
-  generateRating() {
+  public generateRating(): number {
     return Math.floor(Math.random() * Math.floor(5) + 1);
   }
 }
