@@ -75,39 +75,30 @@
                         <h4 class="card-title text-center">Signup</h4>
                         <form class="login-form mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">First name
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <div class="form-icon position-relative">
-                                            <input type="text" class="form-control ps-5" type="text" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" placeholder="First Name">
-                                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                                                <div *ngIf="f.firstName.errors.required">Required</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Last name
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <div class="form-icon position-relative">
-                                            <input type="text" class="form-control ps-5" placeholder="Last Name" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
-                                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                                                <div *ngIf="f.lastName.errors.required">Required</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Your Phone Number
+                                        <label class="form-label">Username
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="form-icon position-relative">
-                                            <input type="Phone Number" name="phone" class="form-control ps-5" [(ngModel)]='userPhone' [ngModelOptions]="{standalone:true}" placeholder="Phone Number" name="Phone Number" required="">
+                                            <input type="text" class="form-control ps-2" type="text" formControlName="userName" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" placeholder="Name">
+                                            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.userName.errors.required">Required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone Number
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="form-icon position-relative">
+                                            <input type="Phone Number" name="phone" class="form-control ps-2" type="text" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="Phone">
+                                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                                <div *ngIf="f.phone.errors.required">Required</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -117,14 +108,19 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="form-icon position-relative">
-                                            <input type="password" name="password" class="form-control ps-5" [(ngModel)]='userPassword' [ngModelOptions]="{standalone:true}" placeholder="Password" required="">
+                                            <input type="password" name="password" class="form-control ps-2" type="text" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="password">
+                                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                                <div *ngIf="f.password.errors.required">Required Password Length 6 characters</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" formControlName="acceptTerms" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }">
+                                            <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
+                                            </div>
                                             <label class="form-check-label" for="flexCheckDefault">I Accept
                                                 <a routerlink="/auth-signup" class="text-primary">Terms And Condition</a>
                                             </label>

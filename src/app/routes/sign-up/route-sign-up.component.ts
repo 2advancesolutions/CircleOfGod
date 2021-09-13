@@ -43,15 +43,14 @@ export class RouteSignUpComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
       {
-        firstName: ['', [Validators.required, Validators.minLength(1)]],
-        lastName: ['', Validators.required],
+        userName: ['', [Validators.required, Validators.minLength(1)]],
+        phone: ['', [Validators.required, Validators.minLength(6)]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         acceptTerms: [false, Validators.requiredTrue],
       },
       {}
     );
   }
-
   get f() {
     return this.registerForm.controls;
   }
@@ -60,7 +59,7 @@ export class RouteSignUpComponent implements OnInit {
     if (this.registerForm.invalid) {
       this.submitted = true;
       return;
-    }else{
+    } else {
       this.submitted = false;
     }
     try {
@@ -73,11 +72,10 @@ export class RouteSignUpComponent implements OnInit {
       this.loading = false;
     }
   }
-  public showDialog() {
+  public showDialog(): void {
     this.display = true;
   }
-
-  public async verfiyPina(phone: any, token: any){
+  public async verifyPin(phone: any, token: any) {
     try {
       this.loading = true;
       await this.supabase.verifyPin(phone, token);
@@ -87,15 +85,11 @@ export class RouteSignUpComponent implements OnInit {
     } finally {
       this.loading = false;
     }
-
   }
-
-
   public showCompleteModal() {
     this.display = false;
     this.showSetupCompletedModal = true;
   }
-
   public onReset() {
     this.registerForm.reset();
   }
