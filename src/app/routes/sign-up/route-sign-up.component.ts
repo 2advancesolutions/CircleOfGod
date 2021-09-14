@@ -15,6 +15,7 @@ export class RouteSignUpComponent implements OnInit {
   ) {}
 
   public registerForm!: FormGroup;
+  public verfiyForm!: FormGroup;
   public submitted = false;
   public loading: boolean = false;
   public userPhone: any | null;
@@ -51,9 +52,24 @@ export class RouteSignUpComponent implements OnInit {
       },
       {}
     );
+    this.verfiyForm = this.formBuilder.group(
+      {
+        input1: ['', [Validators.required, Validators.minLength(1)]],
+        input2: ['', [Validators.required, Validators.minLength(1)]],
+        input3: ['', [Validators.required, Validators.minLength(1)]],
+        input4: ['', [Validators.required, Validators.minLength(1)]],
+        input5: ['', [Validators.required, Validators.minLength(1)]],
+        input6: ['', [Validators.required, Validators.minLength(1)]]
+       
+      },
+      {}
+    );
   }
   get f() {
     return this.registerForm.controls;
+  }
+  get fInput() {
+    return this.verfiyForm.controls;
   }
   public onSubmit(): void {
     this.loading = true;
@@ -84,14 +100,28 @@ export class RouteSignUpComponent implements OnInit {
     this.display = true;
   }
   public async verifyPin(phone: any, token: any) {
-    try {
-      this.loading = true;
-      await this.supabase.verifyPin(phone, token);
-      this.showDialog();
-    } catch (error: any) {
-      alert(error.error_description || error.message);
-    } finally {
-      this.loading = false;
+    this.loading = true;
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      this.submitted = true;
+      return;
+    } else {
+      const { phone, password } = this.f;
+      try {
+        this.supabase
+          .verifyPin(phone.value, token.value)
+          .then((data: ISession) => {
+            if (data.error) {
+              alert(data.error.message);
+            } else {
+              // Go to the next step search 
+              
+            }
+          });
+      } finally {
+        this.submitted = false;
+        this.loading = false;
+      }
     }
   }
   public showCompleteModal() {

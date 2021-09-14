@@ -6,12 +6,24 @@
 </div>
  <p-dialog header="Verification Code" [(visible)]="display">
     <div class="container">
-        <label for="vcode1">Enter 4-digit verification code</label>
+        <label for="vcode pb-4" style="  margin-left: 10px;
+        padding-bottom: 10px;
+        margin-top: 10px;
+        font-weight: 600 ;">Enter 4-digit verification code</label>
+       
         <div class="vcode mt-2" id="vcode">
-            <input type="phone" class="vcode-input" maxlength="1" id="vcode1">
+            <input type="phone" class="vcode-input" formControlName="input1" [ngClass]="{ 'is-invalid': submitted && fInput.input1.errors }">
             <input type="phone" class="vcode-input" maxlength="1" style="margin-left: 10px">
             <input type="phone" class="vcode-input" maxlength="1" style="margin-left: 10px">
-            <input type="phone" class="vcode-input" maxlength="1" style="margin-left: 10px" (blur)="showCompleteModal()">
+            <input type="phone" class="vcode-input" maxlength="1" style="margin-left: 10px">
+            <input type="phone" class="vcode-input" maxlength="1" style="margin-left: 10px">
+            <input type="phone" class="vcode-input" maxlength="1" style="margin-left: 10px">
+        </div>
+        <br>
+        <div class="col-md-12">
+            <div class="d-grid">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
         </div>
     </div>
 </p-dialog>
