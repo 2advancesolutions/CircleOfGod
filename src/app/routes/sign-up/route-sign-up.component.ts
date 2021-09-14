@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ISession } from 'src/app/modals/session';
 import { SupabaseService } from 'src/app/services/supabase.service';
 
 @Component({
@@ -54,22 +55,29 @@ export class RouteSignUpComponent implements OnInit {
   get f() {
     return this.registerForm.controls;
   }
-  public async onSubmit(): Promise<void> {
+  public onSubmit(): void {
+    this.loading = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       this.submitted = true;
       return;
     } else {
-      this.submitted = false;
-    }
-    try {
-      this.loading = true;
-      await this.supabase.signUpWithPhone(this.userPhone, this.userPassword);
-      this.showDialog();
-    } catch (error: any) {
-      alert(error.error_description || error.message);
-    } finally {
-      this.loading = false;
+      const { phone, password } = this.f;
+      try {
+        this.supabase
+          .signUpWithPhone(phone.value, password.value)
+          .then((data: ISession) => {
+            if (data.error) {
+              alert(data.error.message);
+            } else {
+              // show next step
+              this.showDialog();
+            }
+          });
+      } finally {
+        this.submitted = false;
+        this.loading = false;
+      }
     }
   }
   public showDialog(): void {
