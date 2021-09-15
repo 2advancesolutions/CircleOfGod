@@ -49,6 +49,7 @@ export class RouteSignUpComponent implements OnInit {
         phone: ['', [Validators.required, Validators.minLength(6)]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         acceptTerms: [false, Validators.requiredTrue],
+        churchId: [''],
       },
       {}
     );
@@ -78,7 +79,7 @@ export class RouteSignUpComponent implements OnInit {
       this.submitted = true;
       return;
     } else {
-      const { phone, password } = this.f;
+      const { phone, password, churchId } = this.f;
       try {
         this.supabase
           .signUpWithPhone(phone.value, password.value)
