@@ -99,17 +99,21 @@ export class RouteSignUpComponent implements OnInit {
   public showDialog(): void {
     this.display = true;
   }
-  public async verifyPin(phone: any, token: any) {
+  public  verifyPin() {
     this.loading = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       this.submitted = true;
       return;
-    } else {
-      const { phone, password } = this.f;
+    } else {let token = ''
+      const { phone  } = this.f;
+      const { input1, input2, input3,input4, input5,input6 } = this.fInput; 
+      const formValues = [input1, input2, input3,input4, input5, input6].forEach((formControl: any) => { 
+          token += formControl.value; 
+      })
       try {
         this.supabase
-          .verifyPin(phone.value, token.value)
+          .verifyPin(phone.value, token)
           .then((data: ISession) => {
             if (data.error) {
               alert(data.error.message);
