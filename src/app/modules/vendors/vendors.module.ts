@@ -27,6 +27,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {SplitterModule} from 'primeng/splitter';
+import {CaptchaModule} from 'primeng/captcha';
+import {SpeedDialModule} from 'primeng/speeddial';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -58,7 +61,9 @@ import {SplitterModule} from 'primeng/splitter';
     CarouselModule,
     SidebarModule,
     TabViewModule,
-    SplitterModule
+    SplitterModule,
+    CaptchaModule,
+    SpeedDialModule
   ],
   exports: [
     CommonModule,
@@ -89,7 +94,9 @@ import {SplitterModule} from 'primeng/splitter';
     CarouselModule,
     SidebarModule,
     TabViewModule,
-    SplitterModule
+    SplitterModule,
+    CaptchaModule,
+    SpeedDialModule
   ]
 })
 export class VendorsModule { }

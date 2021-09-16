@@ -25,50 +25,6 @@
         </div>
     </form>
 </p-dialog>
-<p-dialog header="Profile Creation" [(visible)]="showSetupCompletedModal">
-
-    <form>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="mb-3">
-                    <label class="form-label">Church Code
-                        <span class="text-danger">*</span>
-                    </label>
-
-                    <input type="text" class="form-control" placeholder="Enter code" name="code" required="">
-
-                </div>
-            </div>
-            <div class="col-md-12">
-            </div>
-            <div class="col-md-12">
-                <div class="mb-3">
-                    <label class="form-label">Select Relgion
-                        <span class="text-danger">*</span>
-                    </label>
-                    <div class="form-icon position-relative">
-                        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" [ngModelOptions]="{standalone:true}"
-                            optionLabel="name"></p-dropdown>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-            </div>
-            <div class="col-md-12 mt-2 pb-4">
-                <div class="d-grid">
-                    <button class="btn btn-primary" type="submit">Submit</button>
-                </div>
-            </div>
-            <div class="col-md-12 mt-2 pb-4">
-                <div class="d-grid">
-                    <button class="btn btn-success" style="color: #fff" [routerLink]="'/profile'">Find A Church To
-                        Join</button>
-                </div>
-            </div>
-        </div>
-    </form>
-
-</p-dialog>
 <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button>
 <section class="bg-auth-home d-table w-100">
     <div class="container">
