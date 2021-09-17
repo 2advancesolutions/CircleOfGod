@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ISession } from 'src/app/modals/session';
 import { SupabaseService } from 'src/app/services/supabase.service';
 
@@ -11,7 +12,8 @@ import { SupabaseService } from 'src/app/services/supabase.service';
 export class RouteSignUpComponent implements OnInit {
   constructor(
     private readonly supabase: SupabaseService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   public registerForm!: FormGroup;
@@ -49,6 +51,7 @@ export class RouteSignUpComponent implements OnInit {
         phone: ['', [Validators.required, Validators.minLength(6)]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         acceptTerms: [false, Validators.requiredTrue],
+        churchId: [''],
       },
       {}
     );
@@ -78,7 +81,7 @@ export class RouteSignUpComponent implements OnInit {
       this.submitted = true;
       return;
     } else {
-      const { phone, password } = this.f;
+      const { phone, password, churchId } = this.f;
       try {
         this.supabase
           .signUpWithPhone(phone.value, password.value)
@@ -86,7 +89,6 @@ export class RouteSignUpComponent implements OnInit {
             if (data.error) {
               alert(data.error.message);
             } else {
-              // show next step
               this.showDialog();
             }
           });
@@ -99,7 +101,7 @@ export class RouteSignUpComponent implements OnInit {
   public showDialog(): void {
     this.display = true;
   }
-  public  verifyPin() {
+  public verifyPin() {
     this.loading = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
@@ -119,7 +121,8 @@ export class RouteSignUpComponent implements OnInit {
               alert(data.error.message);
             } else {
               // Go to the next step search 
-              
+               this.display = false;
+               this.router.navigateByUrl('/main');
             }
           });
       } finally {

@@ -1,5 +1,9 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
+const random = require('random-number');
+
 
 @Component({
   selector: 'app-main',
@@ -26,6 +30,63 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class MainLayoutComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private primengConfig: PrimeNGConfig, private router: Router) {}
+
+  public displayModal: boolean = false;
+  public displayBasic: boolean = false;
+  public displayBasic2: boolean = false;
+  public displayMaximizable: boolean = false;
+  public displayPosition: boolean = false;
+  public position!: string;
+  public disableAdd: boolean = true;
+  public title = "Welcome To Circle Of God Network";
+  public timeLineScreen: boolean = false;
+  public header: string = ''
+  public websiteUrl: string = ''
+  public phone: string = ''
+
+  ngOnInit(): void {
+    this.showPositionDialog('right');
+    const options = { min: 1, max: 2, integer: true };
+    const number = random(options); 
+   
+    switch(number) {
+      case 1:
+        this.title = "Welcome To Circle Of God Network";
+        this.timeLineScreen = true;
+        break;
+      case 2:
+        this.title = "Paid Ad";
+        this.header = 'Chicago Prime Time Marketing'
+        this.timeLineScreen = false;
+        this.websiteUrl = 'www.cprimetime.com';
+        this.phone = '445-443-4432' 
+        break;
+      default:
+        this.title = "Welcome To Circle Of God Network";
+        this.timeLineScreen = true;
+    }
+
+  }
+
+  public showModalDialog() {
+    this.displayModal = true;
+  }
+
+  public showBasicDialog() {
+    this.displayBasic = true;
+  }
+
+  public showBasicDialog2() {
+    this.displayBasic2 = true;
+  }
+
+  public showMaximizableDialog() {
+    this.displayMaximizable = true;
+  }
+
+  public showPositionDialog(position: string) {
+    this.position = position;
+    this.displayPosition = true;
+  }
 }
