@@ -44,6 +44,7 @@ export class RouteSignUpComponent implements OnInit {
     },
     { name: 'Other', code: 'OT' },
   ];
+  public sessionObj: any | null;
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
       {
@@ -89,13 +90,8 @@ export class RouteSignUpComponent implements OnInit {
             if (data.error) {
               alert(data.error.message);
             } else {
-                const uuid = data.user.id;
-                const { userName } = this.f;
-                const username = userName.value;
-              this.supabase.updateProfile({username}, uuid).then((data) => {
-                console.log(data)
-                this.showDialog();
-              });
+              this.sessionObj = data;
+              this.showDialog();
             }
           });
       } finally {
@@ -120,15 +116,25 @@ export class RouteSignUpComponent implements OnInit {
           token += formControl.value; 
       })
       try {
+        const uuid = this.sessionObj.user.id;
+        const { userName, phone } = this.f;
+        const username = userName.value;
+        const phoneNumber = userName.value;
         this.supabase
           .verifyPin(phone.value, token)
           .then((data: ISession) => {
             if (data.error) {
               alert(data.error.message);
             } else {
-              // Go to the next step search 
-               this.display = false;
-               this.router.navigateByUrl('/main');
+              // Once verifyPin create user profile object
+              // Todo 
+           
+            
+            this.supabase.updateProfile({username}, uuid, phone).then((data) => {
+              console.log(data)
+              this.display = false;
+              this.router.navigateByUrl('/main');
+            })
             }
           });
       } finally {

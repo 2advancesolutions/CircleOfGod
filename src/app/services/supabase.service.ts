@@ -1,4 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
 import {
   AuthChangeEvent,
   createClient,
@@ -69,10 +70,11 @@ export class SupabaseService implements OnInit {
   }> {
     return this.supabase.auth.signOut();
   }
-  public updateProfile(profile: Profile, uuid: any ='') {
+  public updateProfile(profile: Profile, uuid: any ='', phone: any= '') {
     const update = {
       ...profile,
       id: uuid,
+      phone: phone.value,
       updated_at: new Date(),
     };
     return this.supabase.from('profiles').upsert(update, {
