@@ -69,10 +69,10 @@ export class SupabaseService implements OnInit {
   }> {
     return this.supabase.auth.signOut();
   }
-  public updateProfile(profile: Profile) {
+  public updateProfile(profile: Profile, uuid: any ='') {
     const update = {
       ...profile,
-      id: this.user?.id,
+      id: uuid,
       updated_at: new Date(),
     };
     return this.supabase.from('profiles').upsert(update, {

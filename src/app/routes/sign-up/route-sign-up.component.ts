@@ -85,11 +85,17 @@ export class RouteSignUpComponent implements OnInit {
       try {
         this.supabase
           .signUpWithPhone(phone.value, password.value)
-          .then((data: ISession) => {
+          .then((data: any) => {
             if (data.error) {
               alert(data.error.message);
             } else {
-              this.showDialog();
+                const uuid = data.user.id;
+                const { userName } = this.f;
+                const username = userName.value;
+              this.supabase.updateProfile({username}, uuid).then((data) => {
+                console.log(data)
+                this.showDialog();
+              });
             }
           });
       } finally {
