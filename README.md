@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Cloud DB and Services 
+https://supabase.io/
+
+## All Payment Information use to collection payments Stripe
+https://docs.ngx-stripe.dev/core-concepts/checkout#create-a-subscription
+
+## Genereate UUID for users DB only support forVersion 1 UUID Generator
+Bulk Version 1 UUID Generation https://www.uuidgenerator.net/version1
+Sample UUID
+67de8aec-18be-11ec-9621-0242ac130002
+What is a Version 1 UUID?
+A Version 1 UUID is a universally unique identifier that is generated using a timestamp and the MAC address of the computer on which it was generated.
