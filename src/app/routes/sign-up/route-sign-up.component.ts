@@ -58,12 +58,7 @@ export class RouteSignUpComponent implements OnInit {
     );
     this.verfiyForm = this.formBuilder.group(
       {
-        input1: ['', [Validators.required, Validators.minLength(1)]],
-        input2: ['', [Validators.required, Validators.minLength(1)]],
-        input3: ['', [Validators.required, Validators.minLength(1)]],
-        input4: ['', [Validators.required, Validators.minLength(1)]],
-        input5: ['', [Validators.required, Validators.minLength(1)]],
-        input6: ['', [Validators.required, Validators.minLength(1)]]
+        pin: ['', [Validators.required, Validators.minLength(6)]]
        
       },
       {}
@@ -82,7 +77,7 @@ export class RouteSignUpComponent implements OnInit {
       this.submitted = true;
       return;
     } else {
-      const { phone, password, churchId } = this.f;
+      const { phone, password} = this.f;
       try {
         this.supabase
           .signUpWithPhone(phone.value, password.value)
@@ -109,17 +104,17 @@ export class RouteSignUpComponent implements OnInit {
     if (this.registerForm.invalid) {
       this.submitted = true;
       return;
-    } else {let token = ''
+    } else {
       const { phone  } = this.f;
-      const { input1, input2, input3,input4, input5,input6 } = this.fInput; 
-      const formValues = [input1, input2, input3,input4, input5, input6].forEach((formControl: any) => { 
-          token += formControl.value; 
-      })
+      const { pin } = this.fInput;
+      const token = pin.value; 
+   
       try {
+        // user gets login detials session object
         const uuid = this.sessionObj.user.id;
         const { userName, phone } = this.f;
         const username = userName.value;
-        const phoneNumber = userName.value;
+  
         this.supabase
           .verifyPin(phone.value, token)
           .then((data: ISession) => {
