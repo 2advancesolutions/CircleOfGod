@@ -44,6 +44,12 @@ export class RouteSignUpComponent implements OnInit {
     },
     { name: 'Other', code: 'OT' },
   ];
+  public displayModal: boolean = false;
+  public displayBasic: boolean = false;
+  public displayBasic2: boolean = false;
+  public displayMaximizable: boolean = false;
+  public displayPosition: boolean = false;
+  public position: string | any;
   public sessionObj: any | null;
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
@@ -58,8 +64,7 @@ export class RouteSignUpComponent implements OnInit {
     );
     this.verfiyForm = this.formBuilder.group(
       {
-        pin: ['', [Validators.required, Validators.minLength(6)]]
-       
+        pin: ['', [Validators.required, Validators.minLength(6)]],
       },
       {}
     );
@@ -77,7 +82,7 @@ export class RouteSignUpComponent implements OnInit {
       this.submitted = true;
       return;
     } else {
-      const { phone, password} = this.f;
+      const { phone, password } = this.f;
       try {
         this.supabase
           .signUpWithPhone(phone.value, password.value)
@@ -86,7 +91,7 @@ export class RouteSignUpComponent implements OnInit {
               alert(data.error.message);
             } else {
               this.sessionObj = data;
-              this.showDialog();
+              this.showPositionDialog('left');
             }
           });
       } finally {
@@ -105,33 +110,32 @@ export class RouteSignUpComponent implements OnInit {
       this.submitted = true;
       return;
     } else {
-      const { phone  } = this.f;
+      const { phone } = this.f;
       const { pin } = this.fInput;
-      const token = pin.value; 
-   
+      const token = pin.value;
+
       try {
         // user gets login detials session object
         const uuid = this.sessionObj.user.id;
         const { userName, phone } = this.f;
         const username = userName.value;
-  
-        this.supabase
-          .verifyPin(phone.value, token)
-          .then((data: ISession) => {
-            if (data.error) {
-              alert(data.error.message);
-            } else {
-              // Once verifyPin create user profile object
-              // Todo 
-           
-            
-            this.supabase.updateProfile({username}, uuid, phone).then((data) => {
-              console.log(data)
-              this.display = false;
-              this.router.navigateByUrl('/main');
-            })
-            }
-          });
+
+        this.supabase.verifyPin(phone.value, token).then((data: ISession) => {
+          if (data.error) {
+            alert(data.error.message);
+          } else {
+            // Once verifyPin create user profile object
+            // Todo
+
+            this.supabase
+              .updateProfile({ username }, uuid, phone)
+              .then((data) => {
+                console.log(data);
+                this.display = false;
+                this.router.navigateByUrl('/main');
+              });
+          }
+        });
       } finally {
         this.submitted = false;
         this.loading = false;
@@ -144,5 +148,27 @@ export class RouteSignUpComponent implements OnInit {
   }
   public onReset() {
     this.registerForm.reset();
+  }
+
+  public showModalDialog() {
+    this.displayModal = true;
+  }
+
+  public showBasicDialog() {
+    this.displayBasic = true;
+  }
+
+  public showBasicDialog2() {
+    this.displayBasic2 = true;
+  }
+
+  public showMaximizableDialog() {
+    this.displayMaximizable = true;
+  }
+
+  public showPositionDialog(position: string) {
+    this.position = position;
+    this.displayPosition = true;
+    this.display = true;
   }
 }

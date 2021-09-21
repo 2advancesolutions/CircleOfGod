@@ -128,3 +128,27 @@ p {
     font-weight: 600 ;
 }
 
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+  .card-rwd {
+  margin-top: -390px;
+  z-index: 1000;
+  background-color: #fff;
+  border-radius: 10px;
+  width:625px
+  }
+
+  .shadow{ 
+    width:625px
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+  .card-rwd {
+  z-index: 1000;
+  background-color: #fff;
+  }
+}
