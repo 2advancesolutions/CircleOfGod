@@ -1,26 +1,20 @@
 <div class="back-to-home rounded d-none d-sm-block">
     <a routerlink="/index" class="btn btn-icon btn-soft-primary"></a>
 </div>
-<p-dialog header="Verification" [(visible)]="display">
+<p-dialog header="Verification" [(visible)]="display" [position]="position" [modal]="true">
     <form [formGroup]="verfiyForm" (ngSubmit)="verifyPin()">
             <div class="row align-items-center">
-               
                 <div class="col-lg-12 col-md-12">
-                    <div class="card shadow rounded border-0">
-                        <div class="card-body">
-                   
-                      
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Pin Number
+                                            <label class="form-label">6 digit pin
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="form-icon position-relative">
                                                 <input type="text" class="form-control ps-2" 
                                                     formControlName="pin"
-                                                    [ngClass]="{ 'is-invalid': fInput.pin.errors && fInput.pin.errors.touch}"
-                                                    placeholder="Pin">
+                                                    [ngClass]="{ 'is-invalid': fInput.pin.errors && fInput.pin.errors.touch}">
                                                 <div *ngIf="fInput.pin.errors" class="invalid-feedback">
                                                     <div *ngIf="fInput.pin.errors.required">Required</div>
                                                 </div>
@@ -29,137 +23,126 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="d-grid">
-                                            <button class="btn btn-primary" type="submit">Register</button>
+                                            <button class="btn btn-success" type="submit">Register</button>
                                         </div>
                                     </div>
                              
                                 </div>
                          
-                        </div>
-                    </div>
+                     
+                  
                 </div>
             </div>
      
     </form>
 </p-dialog>
 <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button>
-<section class="bg-auth-home d-table w-100">
-    <div class="container">
-        <br>
-        <br>
-        <div class="row align-items-center">
-            <div class="col-lg-8 col-md-8">
-                <div class="me-lg-5">
-                    <img src="assets/images/b79.png" class="img-fluid d-block mx-auto" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <div class="card shadow rounded border-0">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Signup</h4>
-                        <form class="login-form mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="mb-3">
-                                        <label class="form-label">Username
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <div class="form-icon position-relative">
-                                            <input type="text" class="form-control ps-2" type="text"
-                                                formControlName="userName"
-                                                [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"
-                                                placeholder="Name">
-                                            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
-                                                <div *ngIf="f.userName.errors.required">Required</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="mb-3">
-                                        <label class="form-label">Phone Number
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <div class="form-icon position-relative">
-                                            <input type="Phone Number" name="phone" class="form-control ps-2"
-                                                type="text" formControlName="phone"
-                                                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
-                                                placeholder="Phone">
-                                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                                                <div *ngIf="f.phone.errors.required">Required</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="mb-3">
-                                        <label class="form-label">Password
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <div class="form-icon position-relative">
-                                            <input type="password" name="password" class="form-control ps-2" type="text"
-                                                formControlName="password"
-                                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-                                                placeholder="password">
-                                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                                <div *ngIf="f.password.errors.required">Required Password Length 6
-                                                    characters</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                           
-                                <div class="col-md-12">
-                                    <div class="mb-3">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="flexCheckDefault"
-                                                formControlName="acceptTerms"
-                                                [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }">
-                                            <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
-                                            </div>
-                                            <label class="form-check-label" for="flexCheckDefault">I Accept
-                                                <a routerlink="/auth-signup" class="text-primary">Terms And
-                                                    Condition</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="d-grid">
-                                        <button class="btn btn-primary" type="submit">Register</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 mt-4 text-center">
-                                    <h6>Or Signup With</h6>
-                                    <div class="row">
-                                        <div class="col-6 mt-3">
-                                            <div class="d-grid">
-                                                <a href="javascript:void(0)" class="btn btn-light">
-                                                    <i class="mdi mdi-facebook text-primary"></i>
-                                                    Facebook</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 mt-3">
-                                            <div class="d-grid">
-                                                <a href="javascript:void(0)" class="btn btn-light">
-                                                    <i class="mdi mdi-google text-danger"></i>
-                                                    Google</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mx-auto">
-                                    <p class="mb-0 mt-3">
-                                        <small class="text-dark me-2">Already have an account ?</small>
-                                        <a routerlink="/auth-login" class="text-dark fw-bold">Sign in</a>
-                                    </p>
+<div class="col-lg-12 col-md-12">
+    <div class="card shadow rounded border-0">
+        <div class="card-body card-rwd ">
+            <h1 class="card-title text-center">Join Our Online Community</h1>
+            <form class="login-form mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Username
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                                <input type="text" class="form-control ps-2" type="text"
+                                    formControlName="userName"
+                                    [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"
+                                    placeholder="Name">
+                                <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.userName.errors.required">Required</div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                                <input type="Phone Number" name="phone" class="form-control ps-2"
+                                    type="text" formControlName="phone"
+                                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+                                    placeholder="Phone">
+                                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                    <div *ngIf="f.phone.errors.required">Required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Password
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                                <input type="password" name="password" class="form-control ps-2" type="text"
+                                    formControlName="password"
+                                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                    placeholder="password">
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Required Password Length 6
+                                        characters</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault"
+                                    formControlName="acceptTerms"
+                                    [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }">
+                                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
+                                </div>
+                                <label class="form-check-label" for="flexCheckDefault">I Accept
+                                    <a routerlink="/auth-signup" class="text-primary">Terms And
+                                        Condition</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="d-grid">
+                            <button class="btn btn-primary" style="color: #fff;
+                            background-color: #3f51b5;
+                            border-color: #3f51b5;
+                            height: 50px;" type="submit">Signup</button>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-12 mt-4 text-center">
+                        <h6>Or Signup With</h6>
+                        <div class="row">
+                            <div class="col-6 mt-3">
+                                <div class="d-grid">
+                                    <a href="javascript:void(0)" class="btn btn-light" style="background-color:blue;color:#fff">
+                                        <i class="mdi mdi-facebook text-primary"></i>
+                                        Facebook</a>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-3">
+                                <div class="d-grid">
+                                    <a href="javascript:void(0)" class="btn btn-light" style="background-color:green;color:#fff">
+                                        <i class="mdi mdi-google text-danger"></i>
+                                        Google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="mx-auto">
+                        <p class="mb-0 mt-3">
+                            <small class="text-dark me-2">Already have an account ?</small>
+                            <a routerlink="/auth-login" class="text-dark fw-bold">Sign in</a>
+                        </p>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-    <br><br>
-</section>
+</div>
