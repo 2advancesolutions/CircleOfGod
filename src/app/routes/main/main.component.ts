@@ -2,6 +2,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
+import { SupabaseService } from 'src/app/services/supabase.service';
 const random = require('random-number');
 
 
@@ -30,7 +31,7 @@ const random = require('random-number');
   ],
 })
 export class MainLayoutComponent implements OnInit {
-  constructor(private primengConfig: PrimeNGConfig, private router: Router) {}
+  constructor(private primengConfig: PrimeNGConfig, private router: Router, private supabaseService: SupabaseService) {}
 
   public displayModal: boolean = false;
   public displayBasic: boolean = false;
@@ -41,11 +42,13 @@ export class MainLayoutComponent implements OnInit {
   public disableAdd: boolean = true;
   public title = "Welcome To Circle Of God Network";
   public timeLineScreen: boolean = false;
-  public header: string = ''
-  public websiteUrl: string = ''
-  public phone: string = ''
+  public header: string = '';
+  public websiteUrl: string = '';
+  public phone: string = '';
+  public userProfile: any;
 
   ngOnInit(): void {
+  this.userProfile = this.supabaseService.user;
     this.showPositionDialog('right');
     const options = { min: 1, max: 2, integer: true };
     const number = random(options); 
