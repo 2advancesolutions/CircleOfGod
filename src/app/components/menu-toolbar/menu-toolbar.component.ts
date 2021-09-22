@@ -44,7 +44,7 @@ export class MenuToolbarComponent implements OnInit {
             ],
           },
         ],
-      }, 
+      },
       
       {
         label: 'Go Live',
