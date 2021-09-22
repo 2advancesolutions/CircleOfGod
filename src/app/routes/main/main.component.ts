@@ -51,7 +51,7 @@ export class MainLayoutComponent implements OnInit {
   this.userProfile = this.supabaseService.user;
     this.showPositionDialog('right');
     const options = { min: 1, max: 2, integer: true };
-    const number = random(options); 
+    const number = random(options);
    
     switch(number) {
       case 1:
@@ -63,7 +63,7 @@ export class MainLayoutComponent implements OnInit {
         this.header = 'Chicago Prime Time Marketing'
         this.timeLineScreen = false;
         this.websiteUrl = 'www.cprimetime.com';
-        this.phone = '445-443-4432' 
+        this.phone = '445-443-4432'
         break;
       default:
         this.title = "Welcome To Circle Of God Network";
