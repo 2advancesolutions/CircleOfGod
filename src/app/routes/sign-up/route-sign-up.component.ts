@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ISession } from 'src/app/modals/session';
 import { SupabaseService } from 'src/app/services/supabase.service';
+import { AuthService } from 'src/app/store/auth/state/auth.service';
 
 @Component({
   selector: 'app-route-sign-up',
@@ -13,7 +14,8 @@ export class RouteSignUpComponent implements OnInit {
   constructor(
     private readonly supabase: SupabaseService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   public registerForm!: FormGroup;
@@ -25,25 +27,6 @@ export class RouteSignUpComponent implements OnInit {
   public display: boolean = false;
   public selectedCity: any | null;
   public showSetupCompletedModal: boolean = false;
-  public cities: any[] = [
-    { name: 'Choose One...', code: 'null' },
-    { name: 'Buddhists', code: 'BU' },
-    { name: 'Christian', code: 'CHR' },
-    { name: 'Ethnic and indigenous', code: 'EI' },
-    { name: 'Hindu', code: 'HD' },
-    { name: 'Jainism', code: 'JA' },
-    { name: 'Judaism', code: 'JU' },
-    { name: 'Muslim', code: 'MU' },
-    { name: 'Nondenomination', code: 'ND' },
-    { name: 'Sikhism', code: 'SK' },
-    { name: 'Spiritism', code: 'SP' },
-    { name: 'Sikhism', code: 'SK' },
-    {
-      name: 'Taoists/Confucianists/Chinese traditional religionists',
-      code: 'SK',
-    },
-    { name: 'Other', code: 'OT' },
-  ];
   public displayModal: boolean = false;
   public displayBasic: boolean = false;
   public displayBasic2: boolean = false;
@@ -51,6 +34,7 @@ export class RouteSignUpComponent implements OnInit {
   public displayPosition: boolean = false;
   public position: string | any;
   public sessionObj: any | null;
+
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
       {
@@ -103,35 +87,31 @@ export class RouteSignUpComponent implements OnInit {
   public showDialog(): void {
     this.display = true;
   }
-  public verifyPin() {
+  public verifyPin(): void {
     this.loading = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       this.submitted = true;
       return;
     } else {
-      const { phone } = this.f;
       const { pin } = this.fInput;
+      const { userName, phone } = this.f;
+
       const token = pin.value;
+      const uuid = this.sessionObj.user.id;
+      const username = userName.value;
+      const userPhone = phone.value;
 
       try {
-        // user gets login detials session object
-        const uuid = this.sessionObj.user.id;
-        const { userName, phone } = this.f;
-        const username = userName.value;
-
         this.supabase.verifyPin(phone.value, token).then((data: ISession) => {
           if (data.error) {
             alert(data.error.message);
           } else {
-            // Once verifyPin create user profile object
-            // Todo
-
             this.supabase
               .updateProfile({ username }, uuid, phone)
               .then((data) => {
-                console.log(data);
                 this.display = false;
+                this.saveUserProfileToStore(uuid, username, userPhone);
                 this.router.navigateByUrl('/main');
               });
           }
@@ -142,33 +122,49 @@ export class RouteSignUpComponent implements OnInit {
       }
     }
   }
-  public showCompleteModal() {
+
+  public showCompleteModal(): void {
     this.display = false;
     this.showSetupCompletedModal = true;
   }
-  public onReset() {
+  public onReset(): void {
     this.registerForm.reset();
   }
 
-  public showModalDialog() {
+  public showModalDialog(): void {
     this.displayModal = true;
   }
 
-  public showBasicDialog() {
+  public showBasicDialog(): void {
     this.displayBasic = true;
   }
 
-  public showBasicDialog2() {
+  public showBasicDialog2(): void {
     this.displayBasic2 = true;
   }
 
-  public showMaximizableDialog() {
+  public showMaximizableDialog(): void {
     this.displayMaximizable = true;
   }
 
-  public showPositionDialog(position: string) {
+  public showPositionDialog(position: string): void {
     this.position = position;
     this.displayPosition = true;
     this.display = true;
+  }
+
+  private saveUserProfileToStore(
+    uuid: any,
+    username: any,
+    userPhone: any
+  ): void {
+    this.authService.setUserProfile({
+      id: uuid,
+      username: username,
+      website: '',
+      avatar_url: '',
+      phone: userPhone,
+      joinDate: null,
+    });
   }
 }
