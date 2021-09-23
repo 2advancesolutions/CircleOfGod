@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ISession } from 'src/app/modals/session';
 import { SupabaseService } from 'src/app/services/supabase.service';
 import { AuthService } from 'src/app/store/auth/state/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-route-sign-up',
@@ -75,7 +76,7 @@ export class RouteSignUpComponent implements OnInit {
               alert(data.error.message);
             } else {
               this.sessionObj = data;
-              this.showPositionDialog('left');
+              this.showVerficationPinModal('left');
             }
           });
       } finally {
@@ -147,7 +148,7 @@ export class RouteSignUpComponent implements OnInit {
     this.displayMaximizable = true;
   }
 
-  public showPositionDialog(position: string): void {
+  public showVerficationPinModal(position: string): void {
     this.position = position;
     this.displayPosition = true;
     this.display = true;
