@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from './services/supabase.service';
-declare var $: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

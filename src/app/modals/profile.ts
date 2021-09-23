@@ -1,6 +1,9 @@
 export interface Profile {
-    username: any;
-    website?: string;
-    avatar_url?: string;
-    phone?: any;
+    id?: string | '',
+    username?: string | '';
+    website?: string | '';
+    avatar_url?: string | '';
+    phone?: string | '';
+    joinDate?: Date | null;
+    acceptTerms?: boolean
   }

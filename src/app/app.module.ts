@@ -26,6 +26,9 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
 import { AccountComponent } from './components/account/account.component';
 import { VendorsModule } from './modules/vendors/vendors.module';
 import { LayoutComponent } from './routes/layout/layout.component';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -58,7 +61,8 @@ import { LayoutComponent } from './routes/layout/layout.component';
     FormsModule,
     ReactiveFormsModule,
     VendorsModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]

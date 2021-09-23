@@ -74,7 +74,6 @@ export class SupabaseService implements OnInit {
       ...profile,
       id: uuid,
       phone: phone.value,
-      updated_at: new Date(),
     };
     return this.supabase.from('profiles').upsert(update, {
       returning: 'minimal',
