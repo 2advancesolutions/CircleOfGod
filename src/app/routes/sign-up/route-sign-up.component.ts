@@ -75,7 +75,14 @@ export class RouteSignUpComponent implements OnInit {
           .signUpWithPhone(phone.value, password.value)
           .then((data: any) => {
             if (data.error) {
-              alert(data.error.message);
+              if(data.error.message.includes('already')) {
+                //TODO switch UI to Login
+                alert(data.error.message);
+                console.log('error');
+              }else {
+                alert(data.error.message);
+              }
+           
             } else {
               this.sessionObj = data;
               this.showVerficationPinModal('left');
@@ -100,24 +107,24 @@ export class RouteSignUpComponent implements OnInit {
       
       const { pin } = this.fInput;
       const { userName, phone } = this.f;
-      const token = pin.value;
-      const uuid = this.sessionObj.user.id;
-      const username = userName.value;
-   
+ 
       try {
-        this.supabase.verifyPin(phone.value, token).then((data: ISession) => {
+        this.supabase.verifyPin(phone.value, pin.value).then((data: any) => {
           if (data.error) {
             alert(data.error.message);
           } else {
+            this.authService.saveToken(data.session.access_token);
+            console.log('session token')
+            console.warn(data.session.access_token);
             const user = {
-              uuid: uuid,
-              username: username,
-              phone: phone.value,
-              joindate: new Date()
+              uuid: this.sessionObj.user.id,
+              username: userName.value,
+              phone: this.sessionObj.user.phone,
+              joindate: this.sessionObj.user.updated_at
             };
             this.dbService.insert(user,'profiles').then(() => {
               this.display = false;
-              this.cacheUserProfile(uuid, username, phone);
+              this.cacheUserProfile(user);
               this.router.navigateByUrl('/main');
             });
           }
@@ -159,18 +166,14 @@ export class RouteSignUpComponent implements OnInit {
     this.display = true;
   }
 
-  private cacheUserProfile(
-    uuid: any,
-    username: any,
-    phone: any
-  ): void {
+  private cacheUserProfile(user: any): void {
     this.authService.setUserProfile({
-      id: uuid,
-      username: username,
+      id: user.uuid,
+      username: user.username,
       website: '',
       avatar_url: '',
-      phone: phone.value,
-      joinDate: null,
+      phone: user.phone,
+      joinDate: user.joindate,
     });
   }
 }

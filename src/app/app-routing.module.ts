@@ -16,7 +16,6 @@ const routes: Routes = [
   },
   { path: 'home', component: RouteLandingComponent },
   { path: 'login', component: RouteLoginComponent },
-  { path: 'signup', component: RouteSignUpComponent },
   { path: 'main', component: MainLayoutComponent,
     children: [
       { path: '', component: LayoutComponent},
