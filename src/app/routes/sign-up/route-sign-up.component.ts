@@ -5,8 +5,6 @@ import { ISession } from 'src/app/modals/session';
 import { DbService } from 'src/app/services/db.service';
 import { SupabaseService } from 'src/app/services/supabase.service';
 import { AuthService } from 'src/app/store/auth/state/auth.service';
-import { environment } from 'src/environments/environment';
-
 
 @Component({
   selector: 'app-route-sign-up',
@@ -78,11 +76,9 @@ export class RouteSignUpComponent implements OnInit {
               if(data.error.message.includes('already')) {
                 //TODO switch UI to Login
                 alert(data.error.message);
-                console.log('error');
               }else {
                 alert(data.error.message);
               }
-           
             } else {
               this.sessionObj = data;
               this.showVerficationPinModal('left');
@@ -114,8 +110,7 @@ export class RouteSignUpComponent implements OnInit {
             alert(data.error.message);
           } else {
             this.authService.saveToken(data.session.access_token);
-            console.log('session token')
-            console.warn(data.session.access_token);
+            console.warn(`session token ${data.session.access_token} `);
             const user = {
               uuid: this.sessionObj.user.id,
               username: userName.value,
