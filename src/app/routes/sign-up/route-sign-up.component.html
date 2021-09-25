@@ -38,7 +38,7 @@
 </p-dialog>
 <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button>
 <div class="col-lg-12 col-md-12">
-    <div class="card shadow rounded border-0">
+    <div class="card rounded border-0">
         <div class="card-body card-rwd ">
             <h1 class="card-title text-center">Join Our Online Community</h1>
             <form class="login-form mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -116,10 +116,15 @@
                             height: 50px;" type="submit">Signup</button>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-12 mt-4 text-center">
-                        <h6>Or Signup With</h6>
+                    <p class="mb-0 mt-3">
+                        <small class="text-dark me-2">Already have an account ?</small>
+                        <a routerlink="/auth-login" class="text-dark fw-bold">Sign in</a>
+                    </p>
+               
+                     <div class="col-lg-12 mt-4 text-center">
+                      <!--   <h6>Or Signup With</h6> -->
                         <div class="row">
-                            <div class="col-6 mt-3">
+                           <!--  <div class="col-6 mt-3">
                                 <div class="d-grid">
                                     <a href="javascript:void(0)" class="btn btn-light" style="background-color:blue;color:#fff">
                                         <i class="mdi mdi-facebook text-primary"></i>
@@ -132,15 +137,15 @@
                                         <i class="mdi mdi-google text-danger"></i>
                                         Google</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
-                    </div> -->
-                    <div class="mx-auto">
+                    </div> 
+                 <!--    <div class="mx-auto">
                         <p class="mb-0 mt-3">
                             <small class="text-dark me-2">Already have an account ?</small>
                             <a routerlink="/auth-login" class="text-dark fw-bold">Sign in</a>
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </form>
         </div>
