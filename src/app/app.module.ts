@@ -21,7 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ConfirmationService} from 'primeng/api';
 import { MenuToolbarComponent } from './components/menu-toolbar/menu-toolbar.component';
 import { MainLayoutComponent } from './routes/main/main.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { AccountComponent } from './components/account/account.component';
 import { VendorsModule } from './modules/vendors/vendors.module';
@@ -29,7 +29,8 @@ import { LayoutComponent } from './routes/layout/layout.component';
 import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
-
+import { TokenInterceptor } from './services/auth/token-interceptor.service';
+import { JwtInterceptor } from './services/auth/jwt-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,17 @@ import { environment } from '../environments/environment';
     IonicModule.forRoot(),
     environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
-  providers: [ConfirmationService],
+  providers: [ConfirmationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

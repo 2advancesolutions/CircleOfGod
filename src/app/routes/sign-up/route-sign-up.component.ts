@@ -113,9 +113,9 @@ export class RouteSignUpComponent implements OnInit {
           if (data.error) {
             alert(data.error.message);
           } else {
-            // TODO create interceptor to add on every request
-            environment.accessToken = data.access_token;
-            console.log(environment.accessToken);
+            this.authService.saveToken(data.session.access_token);
+            console.log('session token')
+            console.warn(data.session.access_token);
             const user = {
               uuid: this.sessionObj.user.id,
               username: userName.value,
