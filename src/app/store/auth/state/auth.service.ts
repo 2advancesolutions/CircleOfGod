@@ -11,6 +11,10 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
+  public saveUUID(uuid: string) {
+    localStorage.setItem('uuid', uuid);
+  }
+
   public saveUserStore(user: AuthState): void {
     this.authStateStore.update(user);
   }

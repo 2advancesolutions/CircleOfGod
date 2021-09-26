@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ISession } from 'src/app/modals/session';
+import { GlobalConfig } from 'src/app/global/project.config';
 import { DbService } from 'src/app/services/db.service';
+import { HttpHelperService } from 'src/app/services/http-helper/http-helper.service';
 import { SupabaseService } from 'src/app/services/supabase.service';
 import { AuthService } from 'src/app/store/auth/state/auth.service';
 
@@ -17,7 +18,8 @@ export class RouteSignUpComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private authService: AuthService,
-    private dbService: DbService
+    private dbService: DbService,
+    private http: HttpHelperService
   ) {}
 
   public registerForm!: FormGroup;
@@ -62,34 +64,23 @@ export class RouteSignUpComponent implements OnInit {
   }
   public onSubmit(): void {
     this.loading = true;
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      this.submitted = true;
-      return;
-    } else {
-      const { phone, password } = this.f;
-      try {
-        this.supabase
-          .signUpWithPhone(phone.value, password.value)
-          .then((data: any) => {
-            if (data.error) {
-              if(data.error.message.includes('already')) {
-                //TODO switch UI to Login
-                alert(data.error.message);
-              }else {
-                alert(data.error.message);
-              }
-            } else {
-              this.sessionObj = data;
-              this.showVerficationPinModal('left');
-            }
-          });
-      } finally {
-        this.submitted = false;
-        this.loading = false;
-      }
-    }
-  }
+if (this.registerForm.invalid) {
+    this.submitted = true;
+    this.loading = false;
+    return;
+} else {
+    const { phone, password} = this.f;
+    const obj = {
+      phone: `+1${phone.value}`,
+      password: password.value
+    };
+    const url = GlobalConfig.superbase.api.auth.signUpPhone.url;
+    this.http.post(url, obj).toPromise().then((data : any) => {
+        this.sessionObj = data;
+        this.showVerficationPinModal('left');
+    })
+}}
+
   public showDialog(): void {
     this.display = true;
   }
@@ -110,8 +101,9 @@ export class RouteSignUpComponent implements OnInit {
             alert(data.error.message);
           } else {
             this.authService.saveToken(data.session.access_token);
-            console.warn(`session token ${data.session.access_token} `);
-            localStorage.setItem('uuid', this.sessionObj.user.id);
+            this.authService.saveUUID(this.sessionObj.user.id);
+           
+       
             const user = {
               uuid: this.sessionObj.user.id,
               username: userName.value,

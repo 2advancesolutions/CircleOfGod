@@ -58,6 +58,7 @@ export class HttpHelperService {
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
+    alert(errorMessage);
     return throwError(errorMessage);
   }
 }
