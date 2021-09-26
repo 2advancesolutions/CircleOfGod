@@ -26,12 +26,11 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
 import { AccountComponent } from './components/account/account.component';
 import { VendorsModule } from './modules/vendors/vendors.module';
 import { LayoutComponent } from './routes/layout/layout.component';
-import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
 import { TokenInterceptor } from './services/interceptors/token-interceptor.service';
 import { JwtInterceptor } from './services/interceptors/jwt-interceptor.service';
-
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 @NgModule({
   declarations: [
@@ -60,6 +59,7 @@ import { JwtInterceptor } from './services/interceptors/jwt-interceptor.service'
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    NgHttpLoaderModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     VendorsModule,

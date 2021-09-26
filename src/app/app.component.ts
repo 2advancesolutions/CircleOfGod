@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from './services/supabase.service';
+import { Spinkit } from 'ng-http-loader';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import { SupabaseService } from './services/supabase.service';
 })
 export class AppComponent implements OnInit {
   constructor(private readonly supabase: SupabaseService) { }
-  session = this.supabase.session;
+  private session = this.supabase.session;
+  public spinkit = Spinkit;
   ngOnInit(): void {
     this.supabase.authChanges((_, session) => {
       if(session) {
