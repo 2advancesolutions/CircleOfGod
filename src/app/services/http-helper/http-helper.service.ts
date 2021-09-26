@@ -54,11 +54,11 @@ export class HttpHelperService {
   private errorHandler(error: any): Observable<any> {
     let errorMessage = "";
     if (error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
+      errorMessage = error.error;
     } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = error.error.msg;
     }
-    alert(errorMessage);
+    console.error(errorMessage);
     return throwError(errorMessage);
   }
 }
