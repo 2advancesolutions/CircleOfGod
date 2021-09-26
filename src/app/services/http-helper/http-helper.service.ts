@@ -54,9 +54,9 @@ export class HttpHelperService {
   private errorHandler(error: any): Observable<any> {
     let errorMessage = "";
     if (error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
+      errorMessage = error.error;
     } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error code ${error.error.code}\n${error.error.msg}`;
     }
     alert(errorMessage);
     return throwError(errorMessage);
