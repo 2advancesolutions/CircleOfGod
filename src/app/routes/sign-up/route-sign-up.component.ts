@@ -91,36 +91,32 @@ if (this.registerForm.invalid) {
       this.submitted = true;
       return;
     } else {
-      
+
       const { pin } = this.fInput;
       const { userName, phone } = this.f;
- 
-      try {
-        this.supabase.verifyPin(phone.value, pin.value).then((data: any) => {
-          if (data.error) {
-            alert(data.error.message);
-          } else {
-            this.authService.saveToken(data.session.access_token);
-            this.authService.saveUUID(this.sessionObj.user.id);
-           
-       
-            const user = {
-              uuid: this.sessionObj.user.id,
-              username: userName.value,
-              phone: this.sessionObj.user.phone,
-              joindate: this.sessionObj.user.updated_at
-            };
-            this.dbService.insert(user,'profiles').then(() => {
-              this.display = false;
-              this.cacheUserProfile(user);
-              this.router.navigateByUrl('/main');
-            });
-          }
+
+      const obj = {
+        type: 'sms',
+        phone: `+1${phone.value}`,
+        token: pin.value
+      };
+      const url = GlobalConfig.superbase.api.auth.verfifyPin.url
+      this.http.post(url, obj).toPromise().then((data : any) => {
+        this.authService.saveToken(data.access_token);
+        this.authService.saveUUID(this.sessionObj.id);
+        const userObj = {
+          uuid: this.sessionObj.id,
+          username: userName.value,
+          phone: this.sessionObj.phone,
+          joindate: this.sessionObj.updated_at
+        };
+        this.dbService.insert(userObj,'profiles').then(() => {
+          this.display = false;
+          // Save User Profile Auth Store State
+          this.cacheUserProfile(userObj);
+          this.router.navigateByUrl('/main');
         });
-      } finally {
-        this.submitted = false;
-        this.loading = false;
-      }
+      })
     }
   }
 
