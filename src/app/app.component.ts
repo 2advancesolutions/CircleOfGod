@@ -11,9 +11,9 @@ export class AppComponent implements OnInit {
   session = this.supabase.session;
   ngOnInit(): void {
     this.supabase.authChanges((_, session) => {
-      this.session = session;
-      console.log('User Session');
-      console.log(this.session);
+      if(session) {
+        localStorage.setItem('session', JSON.stringify(session));
+      }
     });
   }
 }
