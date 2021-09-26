@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, #3a0146, #aa00c4);
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  width: 75%;
+  margin: auto;
+  position: relative;
+  padding: 0 15px;
+}
+
+.box{
+  background-color: #231f3a;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.box .card-header{
+  padding: 20px;
+  position: relative;
+}
+
+.tag{
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #231d15;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background-color: #febb0c;
+}
+
+.card-header .img{
+  display: block;
+  position: relative;
+  margin-top:5px;
+  margin-bottom: 18px;
+}
+
+.card-header .img .inner-img{
+  width: 140px;
+  height: 140px;
+  margin: auto;
+  border: 1px solid #c500d6;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.card-header .img .inner-img .img-profile{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.card-header .desc{
+  text-align: center;
+  padding: 0 80px;
+}
+
+.card-header .desc h3, h5, p{
+  color: #bcc1d4;
+}
+
+.card-header .desc h3{
+  font-size: 18px;
+}
+.card-header .desc h5{
+  font-size: 12px;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.card-header .desc p{
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.2rem;
+}
+
+.card-header .buttons {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 20px;
+}
+
+.card-header .buttons .btn{
+  display: inline-block;
+  padding: 10px 18px;
+  border: none;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.card-header .buttons .btn-primary{
+  color: #ffffff;
+  background-color: #c500d6;
+}
+
+.card-header .buttons .btn-bordered{
+  color: #c500d6;
+  background-color: transparent;
+  border: 1px solid #c500d6;
+}
+
+.card-footer{
+  background-color: #1f1b36;
+  padding: 20px;
+}
+
+.card-footer h5{
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.card-footer .tags{
+  display: inline-block;
+  color: #bcc1d4;
+  font-size: 12px;
+  padding: 10px 10px;
+  margin: 2px 0;
+  border-radius: 2px;
+  border: 1px solid #342e54;
+}
+
+@media (max-width: 580px){
+  .container{
+    width: 100%;
+  }
+  
+  .card-header .desc{
+    padding: 0 20px;
+  }
+}

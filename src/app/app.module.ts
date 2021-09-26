@@ -31,6 +31,7 @@ import { environment } from '../environments/environment';
 import { TokenInterceptor } from './services/interceptors/token-interceptor.service';
 import { JwtInterceptor } from './services/interceptors/jwt-interceptor.service';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { UserProfileCardComponent } from './components/cards/user-profile-card-1/user-profile-card/user-profile-card.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     MainLayoutComponent,
     DashboardCardComponent,
     AccountComponent,
-    LayoutComponent
+    LayoutComponent,
+    UserProfileCardComponent
   ],
   imports: [
     BrowserModule,

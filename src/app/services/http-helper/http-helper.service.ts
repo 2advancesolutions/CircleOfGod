@@ -56,9 +56,9 @@ export class HttpHelperService {
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error;
     } else {
-      errorMessage = `Error code ${error.error.code}\n${error.error.msg}`;
+      errorMessage = error.error.msg;
     }
-    alert(errorMessage);
+    console.error(errorMessage);
     return throwError(errorMessage);
   }
 }

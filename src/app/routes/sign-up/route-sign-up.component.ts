@@ -38,6 +38,8 @@ export class RouteSignUpComponent implements OnInit {
   public displayPosition: boolean = false;
   public position: string | any;
   public sessionObj: any | null;
+  public accountExist: boolean = false;
+  public errMessage: string = '';
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
@@ -78,6 +80,10 @@ if (this.registerForm.invalid) {
     this.http.post(url, obj).toPromise().then((data : any) => {
         this.sessionObj = data;
         this.showVerficationPinModal('left');
+    },
+    error => {
+      this.errMessage = error;
+      this.accountExist = true;
     })
 }}
 
