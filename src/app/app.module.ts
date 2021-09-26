@@ -29,8 +29,9 @@ import { LayoutComponent } from './routes/layout/layout.component';
 import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
-import { TokenInterceptor } from './services/auth/token-interceptor.service';
-import { JwtInterceptor } from './services/auth/jwt-interceptor.service';
+import { TokenInterceptor } from './services/interceptors/token-interceptor.service';
+import { JwtInterceptor } from './services/interceptors/jwt-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { JwtInterceptor } from './services/auth/jwt-interceptor.service';
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true
-    }],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

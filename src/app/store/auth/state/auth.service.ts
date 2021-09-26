@@ -5,14 +5,14 @@ import { AuthState, AuthStore } from './auth.store';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private authStore: AuthStore, private router: Router) {}
+  constructor(private authStateStore: AuthStore, private router: Router) {}
 
   public saveToken(token: string) {
     localStorage.setItem('token', token);
   }
 
-  public setUserProfile(user: AuthState): void {
-    this.authStore.update(user);
+  public saveUserStore(user: AuthState): void {
+    this.authStateStore.update(user);
   }
 
   public getToken(): string | null {

@@ -20,8 +20,8 @@ export class JwtInterceptor implements HttpInterceptor {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
           // redirect to the login route
-          console.log('logout')
           this.auth.logOut();
+          alert('Session Timeout');
         }
       }
     }))

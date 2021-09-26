@@ -111,6 +111,7 @@ export class RouteSignUpComponent implements OnInit {
           } else {
             this.authService.saveToken(data.session.access_token);
             console.warn(`session token ${data.session.access_token} `);
+            localStorage.setItem('uuid', this.sessionObj.user.id);
             const user = {
               uuid: this.sessionObj.user.id,
               username: userName.value,
@@ -162,7 +163,7 @@ export class RouteSignUpComponent implements OnInit {
   }
 
   private cacheUserProfile(user: any): void {
-    this.authService.setUserProfile({
+    this.authService.saveUserStore({
       id: user.uuid,
       username: user.username,
       website: '',
