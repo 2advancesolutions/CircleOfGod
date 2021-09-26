@@ -4,6 +4,9 @@ export const GlobalConfig = {
             auth: {
                 signUpPhone: {
                     url: 'https://uopwsawvoaqbggzcfxip.supabase.co/auth/v1/signup'
+                },
+                verfifyPin: {
+                    url: 'https://uopwsawvoaqbggzcfxip.supabase.co/auth/v1/verify'
                 }
             }
         }
