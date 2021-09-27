@@ -14,9 +14,13 @@ export class LayoutComponent implements OnInit {
   constructor(private userProfileService: UserProfileService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    let uuid: any = localStorage.getItem('uuid');
+    let session: any = localStorage.getItem('session');
+    if(session) {
+      session = JSON.parse(session)
+    }
 
-   this.http.get(`https://uopwsawvoaqbggzcfxip.supabase.co/rest/v1/profiles?uuid=eq.${uuid}`)
+    // get User Profile
+   this.http.get(`https://uopwsawvoaqbggzcfxip.supabase.co/rest/v1/profiles?uuid=eq.${session.user.id}`)
    .toPromise().then((data: any) => {
        console.log(data);
    })

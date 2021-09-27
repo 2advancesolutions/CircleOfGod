@@ -9,13 +9,9 @@ import { WallComponent } from './components/wall/wall.component';
 import { LayoutComponent } from './routes/layout/layout.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    component: RouteLandingComponent
-  },
   { path: 'home', component: RouteLandingComponent },
   { path: 'login', component: RouteLoginComponent },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'main', component: MainLayoutComponent,
     children: [
       { path: '', component: LayoutComponent},
