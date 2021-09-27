@@ -16,28 +16,43 @@
           <div class="card login-page bg-white shadow rounded border-0">
             <div class="card-body">
               <h4 class="card-title text-center">Login</h4>
-              <form class="login-form mt-4">
+              <form class="login-form mt-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                  <div class="col-lg-12">
+                  <div class="col-md-12">
                     <div class="mb-3">
-                      <label class="form-label">Your Email <span class="text-danger">*</span></label>
-                      <div class="form-icon position-relative">
-                     
-                        <input type="email" class="form-control ps-5" placeholder="Email" name="email" required="">
-                      </div>
+                        <label class="form-label">Username
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="form-icon position-relative">
+                            <input type="text" class="form-control ps-2" type="text"
+                                formControlName="userName"
+                                [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"
+                                placeholder="email address">
+                            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                                <div *ngIf="submitted && f.userName.errors">Required Vaild Email Address</div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+                </div>
                   <!--end col-->
   
-                  <div class="col-lg-12">
+                  <div class="col-md-12">
                     <div class="mb-3">
-                      <label class="form-label">Password <span class="text-danger">*</span></label>
-                      <div class="form-icon position-relative">
-                        
-                        <input type="password" class="form-control ps-5" placeholder="Password" required="">
-                      </div>
+                        <label class="form-label">Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="form-icon position-relative">
+                            <input type="password" name="password" class="form-control ps-2" type="text"
+                                formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                placeholder="password">
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Required Password Length 6
+                                    characters</div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+                </div>
                   <!--end col-->
   
                   <div class="col-lg-12">
@@ -56,7 +71,7 @@
   
                   <div class="col-lg-12 mb-0">
                     <div class="d-grid">
-                      <button class="btn btn-primary" routerLink="/profile" >Sign in</button>
+                      <button class="btn btn-primary" type="submit">Sign in</button>
                     </div>
                   </div>
                   <!--end col-->
