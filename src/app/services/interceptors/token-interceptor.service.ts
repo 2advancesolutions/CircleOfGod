@@ -13,12 +13,18 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('token');
+    let session: any = localStorage.getItem('session');
+    let defaultKey = environment.defaultKey;
+    if(session) {
+      session = JSON.parse(session).access_token;
+    }else {
+      session = environment.defaultKey;
+    }
     request = request.clone({
       setHeaders: {
         'Content-Type': 'application/json',
         'apikey': environment.supbaseKey,
-        'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${session}`,
       },
     });
     return next.handle(request);

@@ -30,10 +30,15 @@ export class HttpHelperService {
   public getByIdCustom<T>(
     url: string,
     id: number | string,
-    additionalPath: string
   ): Observable<T> {
+    
     return this.httpClient
-      .get<T>(this.apiServer + url + id + additionalPath)
+    .get(url, {
+      params: {
+        uuid: `eq.${id}`
+      },
+      observe: 'response'
+    })
       .pipe(catchError(this.errorHandler));
   }
   public post<T>(url: string, obj: T): Observable<T> {

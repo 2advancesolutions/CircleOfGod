@@ -49,6 +49,8 @@ export class MainLayoutComponent implements OnInit {
 
   ngOnInit(): void {
   this.userProfile = this.supabaseService.user;
+  // TODO move logic to ad banner component
+  // Add breath first search to cal next banner base users likes toggle between paid subscriptons 
     this.showPositionDialog('right');
     const options = { min: 1, max: 2, integer: true };
     const number = random(options); 
@@ -69,6 +71,7 @@ export class MainLayoutComponent implements OnInit {
         this.title = "Welcome To Circle Of God Network";
         this.timeLineScreen = true;
     }
+    //////////
 
   }
 

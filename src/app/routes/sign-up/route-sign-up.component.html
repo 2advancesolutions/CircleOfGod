@@ -11,40 +11,9 @@
 <div class="back-to-home rounded d-none d-sm-block">
     <a routerlink="/index" class="btn btn-icon btn-soft-primary"></a>
 </div>
+
 <p-dialog header="Verification" [(visible)]="display" [modal]="true">
-    <form [formGroup]="verfiyForm" (ngSubmit)="verifyPin()">
-            <div class="row align-items-center">
-                <div class="col-lg-12 col-md-12">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">6 digit pin
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="form-icon position-relative">
-                                                <input type="text" class="form-control ps-2" 
-                                                    formControlName="pin"
-                                                    [ngClass]="{ 'is-invalid': fInput.pin.errors && fInput.pin.errors.touch}">
-                                                <div *ngIf="fInput.pin.errors" class="invalid-feedback">
-                                                    <div *ngIf="fInput.pin.errors.required">Required</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="d-grid">
-                                            <button class="btn btn-success" type="submit">Register</button>
-                                        </div>
-                                    </div>
-                             
-                                </div>
-                         
-                     
-                  
-                </div>
-            </div>
-     
-    </form>
+    Please check your email
 </p-dialog>
 <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button>
 <div class="col-lg-12 col-md-12">
@@ -62,14 +31,14 @@
                                 <input type="text" class="form-control ps-2" type="text"
                                     formControlName="userName"
                                     [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"
-                                    placeholder="Name">
+                                    placeholder="email address">
                                 <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
-                                    <div *ngIf="f.userName.errors.required">Required</div>
+                                    <div *ngIf="submitted && f.userName.errors">Required Vaild Email Address</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+             <!--        <div class="col-md-12">
                         <div class="mb-3">
                             <label class="form-label">Phone Number
                                 <span class="text-danger">*</span>
@@ -84,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-12">
                         <div class="mb-3">
                             <label class="form-label">Password
