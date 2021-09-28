@@ -109,6 +109,20 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "uat": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.uat.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -121,6 +135,9 @@
             },
             "development": {
               "browserTarget": "test:build:development"
+            },
+            "uat": {
+              "browserTarget": "test:build:uat"
             }
           },
           "defaultConfiguration": "development"

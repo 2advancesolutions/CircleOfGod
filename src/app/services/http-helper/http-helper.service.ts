@@ -10,7 +10,6 @@ export enum httpActions {
   DELETE = "DELETE",
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
