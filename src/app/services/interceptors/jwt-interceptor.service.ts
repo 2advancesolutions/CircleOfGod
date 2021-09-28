@@ -26,6 +26,7 @@ export class JwtInterceptor implements HttpInterceptor {
             if (err.status === 401) {
               // redirect to the login route
               alert('Session Timeout');
+              this.superBase.signOut();
               localStorage.clear();
               this.router.navigateByUrl('home');
              
