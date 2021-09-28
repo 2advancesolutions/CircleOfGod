@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  supabaseUrl: "https://uopwsawvoaqbggzcfxip.supabase.co",
-  supbaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjI5ODU1MjA0LCJleHAiOjE5NDU0MzEyMDR9.xVqUyvCqDpXTpDrcW_zI8ZfAJGhvyArPbK4hXCVhGag",
+  supabaseUrl: "https://upjpxjktqebaoxrbbgqn.supabase.co",
+  supbaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzMjg0MDA4MywiZXhwIjoxOTQ4NDE2MDgzfQ.NphnHg3IC45deEKH9a_VMj-a_yr5i4Kw1tqxG4_uN0I",
   accessToken: "",
-  defaultKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjI5ODU1MjA0LCJleHAiOjE5NDU0MzEyMDR9.xVqUyvCqDpXTpDrcW_zI8ZfAJGhvyArPbK4hXCVhGag"
+  defaultKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzMjg0MDA4MywiZXhwIjoxOTQ4NDE2MDgzfQ.NphnHg3IC45deEKH9a_VMj-a_yr5i4Kw1tqxG4_uN0I"
 };

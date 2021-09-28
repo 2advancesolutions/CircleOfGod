@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   supabaseUrl: "https://uopwsawvoaqbggzcfxip.supabase.co",
-  supbaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjI5ODU1MjA0LCJleHAiOjE5NDU0MzEyMDR9.xVqUyvCqDpXTpDrcW_zI8ZfAJGhvyArPbK4hXCVhGag",
+  supbaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyOTg1NTIwNCwiZXhwIjoxOTQ1NDMxMjA0fQ.KlkWIPZAm03gIR2YsmlQsS9BFDouwuROzz8miCGtYl0",
   accessToken: '',
-  defaultKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjI5ODU1MjA0LCJleHAiOjE5NDU0MzEyMDR9.xVqUyvCqDpXTpDrcW_zI8ZfAJGhvyArPbK4hXCVhGag"
+  defaultKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyOTg1NTIwNCwiZXhwIjoxOTQ1NDMxMjA0fQ.KlkWIPZAm03gIR2YsmlQsS9BFDouwuROzz8miCGtYl0"
 };
 
 /*
