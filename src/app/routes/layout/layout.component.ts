@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { UserProfileService } from 'src/app/services/interceptors/user-profile.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -20,12 +21,10 @@ export class LayoutComponent implements OnInit {
     }
 
     // get User Profile
-   this.http.get(`https://uopwsawvoaqbggzcfxip.supabase.co/rest/v1/profiles?uuid=eq.${session.user.id}`)
+   this.http.get(`https://${environment.supabaseUrl}/rest/v1/profiles?uuid=eq.${session.user.id}`)
    .toPromise().then((data: any) => {
        console.log(data);
    })
-  
-   
   }
 
 }

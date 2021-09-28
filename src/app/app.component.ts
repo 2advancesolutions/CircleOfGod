@@ -13,13 +13,7 @@ export class AppComponent implements OnInit {
   private session = this.supabase.session;
   public spinkit = Spinkit;
   ngOnInit(): void {
-    let session: any = localStorage.getItem('session');
-    let defaultKey = environment.supbaseKey
-    if(session) {
-      session = JSON.parse(session).access_token;
-    }else {
-      session = environment.supbaseKey;
-    }
+    localStorage.setItem('token',environment.supbaseKey);
     this.supabase.authChanges((_, session) => {
       if(session) {
         localStorage.setItem('session', JSON.stringify(session));
