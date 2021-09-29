@@ -4,7 +4,6 @@ import { take } from 'rxjs/operators';
 import { UserProfileService } from 'src/app/services/interceptors/user-profile.service';
 import { environment } from 'src/environments/environment';
 
-
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
