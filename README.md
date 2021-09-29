@@ -1,4 +1,9 @@
-# Test
+#Project Architect System Design
+
+![Credit Union Portal](https://user-images.githubusercontent.com/7279973/135209846-db17ef2c-6a32-4bc9-91ea-a9c8dd13025f.jpeg)
+
+
+# Project UI Framework
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
