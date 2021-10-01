@@ -20,7 +20,7 @@ export class LayoutComponent implements OnInit {
     }
 
     // get User Profile
-   this.http.get(`https://${environment.supabaseUrl}/rest/v1/profiles?uuid=eq.${session.user.id}`)
+   this.http.get(`${environment.supabaseUrl}/rest/v1/profiles?uuid=eq.${session.user.id}`)
    .toPromise().then((data: any) => {
        console.log(data);
    })
