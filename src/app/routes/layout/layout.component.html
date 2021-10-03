@@ -1,3 +1,5 @@
+
+<ng-container *ngIf="!welecomeAnimation">
 <header>
     <div class="container text-center">
       <h1></h1>
@@ -125,4 +127,6 @@
   
     </div>
   </section>
-  
+</ng-container>
+
+<app-welcome-animation *ngIf="welecomeAnimation"></app-welcome-animation>

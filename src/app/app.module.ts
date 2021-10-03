@@ -32,6 +32,7 @@ import { TokenInterceptor } from './services/interceptors/token-interceptor.serv
 import { JwtInterceptor } from './services/interceptors/jwt-interceptor.service';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { UserProfileCardComponent } from './components/cards/user-profile-card-1/user-profile-card/user-profile-card.component';
+import { WelcomeAnimationComponent } from './routes/welcome-animation/welcome-animation.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UserProfileCardComponent } from './components/cards/user-profile-card-1
     DashboardCardComponent,
     AccountComponent,
     LayoutComponent,
-    UserProfileCardComponent
+    UserProfileCardComponent,
+    WelcomeAnimationComponent
   ],
   imports: [
     BrowserModule,
