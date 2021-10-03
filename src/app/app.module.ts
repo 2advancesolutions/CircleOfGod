@@ -33,6 +33,7 @@ import { JwtInterceptor } from './services/interceptors/jwt-interceptor.service'
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { UserProfileCardComponent } from './components/cards/user-profile-card-1/user-profile-card/user-profile-card.component';
 import { WelcomeAnimationComponent } from './routes/welcome-animation/welcome-animation.component';
+import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { WelcomeAnimationComponent } from './routes/welcome-animation/welcome-an
     AccountComponent,
     LayoutComponent,
     UserProfileCardComponent,
-    WelcomeAnimationComponent
+    WelcomeAnimationComponent,
+    BottomMenuComponent
   ],
   imports: [
     BrowserModule,
