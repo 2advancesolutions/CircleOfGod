@@ -60,6 +60,7 @@ export class RouteLoginComponent implements OnInit {
          this.router.navigateByUrl('/main');
           },
           (error) => {
+            console.log(error);
              alert('Invaild User Name and Password');
           }
         );

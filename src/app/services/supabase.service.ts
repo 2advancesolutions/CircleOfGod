@@ -44,7 +44,7 @@ export class SupabaseService implements OnInit {
   } {
     return this.supabase.auth.onAuthStateChange(callback);
   }
-  public signIn<T>(email: string): Promise<any> {
+  public signIn(email: string): Promise<any> {
     return this.supabase.auth.signIn({ email });
   }
   public signUpWithPhone(
