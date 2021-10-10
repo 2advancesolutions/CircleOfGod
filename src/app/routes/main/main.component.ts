@@ -1,7 +1,5 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { PrimeNGConfig } from 'primeng/api';
 import { SupabaseService } from 'src/app/services/supabase.service';
 const random = require('random-number');
 
@@ -31,7 +29,7 @@ const random = require('random-number');
   ],
 })
 export class MainLayoutComponent implements OnInit {
-  constructor(private primengConfig: PrimeNGConfig, private router: Router, private supabaseService: SupabaseService) {}
+  constructor( private supabaseService: SupabaseService) {}
 
   public displayModal: boolean = false;
   public displayBasic: boolean = false;

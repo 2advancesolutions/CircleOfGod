@@ -10,7 +10,6 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent implements OnInit {
   constructor(private readonly supabase: SupabaseService) { }
-  private session = this.supabase.session;
   public spinkit = Spinkit;
   ngOnInit(): void {
     localStorage.setItem('token',environment.supbaseKey);

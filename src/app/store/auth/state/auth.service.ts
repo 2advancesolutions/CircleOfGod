@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
 import { AuthState, AuthStore } from './auth.store';
 
 @Injectable({ providedIn: 'root' })

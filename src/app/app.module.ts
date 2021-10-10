@@ -16,7 +16,7 @@ import { RouteLoginComponent } from './routes/login/route-login/route-login.comp
 import { RouteProfileComponent } from './routes/profile/route-profile/route-profile.component';
 import { WallComponent } from './components/wall/wall.component';
 import { LandingComponentRoute } from './routes/landing/landing.component';
-import { RouteSignUpComponent } from './routes/sign-up/route-sign-up.component';
+import { RouteSignUpComponent } from './components/sign-up/route-sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ConfirmationService} from 'primeng/api';
 import { MenuToolbarComponent } from './components/menu-toolbar/menu-toolbar.component';
@@ -34,6 +34,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { UserProfileCardComponent } from './components/cards/user-profile-card-1/user-profile-card/user-profile-card.component';
 import { WelcomeAnimationComponent } from './routes/welcome-animation/welcome-animation.component';
 import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.component';
+import { UserPathComponent } from './routes/user-path/user-path.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.compon
     LayoutComponent,
     UserProfileCardComponent,
     WelcomeAnimationComponent,
-    BottomMenuComponent
+    BottomMenuComponent,
+    UserPathComponent
   ],
   imports: [
     BrowserModule,

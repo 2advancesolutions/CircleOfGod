@@ -3,8 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GlobalConfig } from 'src/app/global/project.config';
 import { HttpHelperService } from 'src/app/services/http-helper/http-helper.service';
-import { SupabaseService } from 'src/app/services/supabase.service';
-import { AuthService } from 'src/app/store/auth/state/auth.service';
+
 
 
 @Component({
@@ -19,10 +18,9 @@ export class RouteLoginComponent implements OnInit {
   public submitted = false;
   private emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
 
-  constructor(private readonly supabase: SupabaseService, 
+  constructor( 
     private formBuilder: FormBuilder,
     private router: Router,
-    private authService: AuthService,
     private http: HttpHelperService) { }
 
   ngOnInit(): void {

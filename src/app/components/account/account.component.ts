@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Session } from '@supabase/supabase-js';
 import { Profile } from 'src/app/modals/profile';
-import { SupabaseService } from 'src/app/services/supabase.service';
+
 
 @Component({
   selector: 'app-account',
@@ -10,7 +10,7 @@ import { SupabaseService } from 'src/app/services/supabase.service';
 })
 export class AccountComponent implements OnInit {
   @Input() session: Session | undefined;
-  constructor(private readonly supabase: SupabaseService) {}
+  constructor() {}
   loading = false;
   profile: Profile | undefined;
   ngOnInit() {
